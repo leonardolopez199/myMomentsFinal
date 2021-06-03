@@ -24,9 +24,11 @@ export class MediaItemComponent implements OnInit {
   @Input('image') image: string;
   @Input('place') place: string;
   @Input('time') time: string;
-  @ViewChild('input') check: any;
-  private checkbox;
-
+  public id: number;
+  private checkbox: any;
+  public checkExist: any;
+  public gamby: any;
+  
   constructor(private navRoot: NavController, private router: Router) {
     this.longPressActive = false;
     this.checkBoxVisible = false;
@@ -35,14 +37,17 @@ export class MediaItemComponent implements OnInit {
     this.durationLongPress = 500;
     this.subject = new Subject();
     this.subjectChecked = new Subject();
+    this.id = Math.random();
   }
 
   ngOnInit() {
-    
+   // check every 100ms
   }
+
   ngAfterViewInit(): void {
-    this.checkbox = this.check;
+    //this.checkbox = document.getElementById(this.id.toString());
   }
+  
 
   public isCheckBoxVisible(): boolean {
     return this.checkBoxVisible;
@@ -56,12 +61,12 @@ export class MediaItemComponent implements OnInit {
   }
 
   public enableCheckBox(): void {
-    if (!this.checkBoxVisible)
+  //  if (!this.checkBoxVisible)
       this.checkBoxVisible = true;
   }
 
   public checkBoxStatus(status: boolean) {
-    
+    this.longPressActive=false;
     if (status != this.checked) {
       this.checked = status;
 
@@ -87,20 +92,15 @@ export class MediaItemComponent implements OnInit {
   }
 
   public onClick(event?): void {
-    console.log(this.checkbox);
    
     if (this.checkBoxVisible) {
       if (this.checked) {
         this.checkBoxStatus(false);
-        this.check.removeAttribute('checked', false);
-        if (event.target.id == "check")
-          event.target.removeAttribute('checked', false);
+        document.getElementById(this.id.toString()).removeAttribute("checked");
       }
       else {
         this.checkBoxStatus(true);
-        this.check.setAttribute('checked', true);
-        if (event.target.id == "check")
-          event.target.setAttribute('checked', true);
+        document.getElementById(this.id.toString()).setAttribute("checked","true");
       }
     } else {
       let navigationExtras: NavigationExtras;
