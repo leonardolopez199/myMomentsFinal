@@ -1,0 +1,7 @@
+{
+  "name": "myMoments",
+  "integrations": {
+    "capacitor": {}
+  },
+  "type": "angular"
+}

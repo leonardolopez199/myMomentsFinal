@@ -1,0 +1,60 @@
+<ion-header>
+    <ion-toolbar>
+        <ion-title>Forma de pagamento</ion-title>
+        <ion-buttons slot="start">
+            <ion-back-button></ion-back-button>
+        </ion-buttons>
+    </ion-toolbar>
+</ion-header>
+
+<ion-content class="ion-padding">
+    <ion-list>
+        <ion-item>
+            <ion-select placeholder="Selecionar metodo de pagamento" (ionChange)="onSelectChange($event)">
+                <ion-select-option value="cartao"> Cartão de credito</ion-select-option>
+                <ion-select-option value="paypal">PayPal</ion-select-option>
+                <ion-select-option value="mbway">MBWay</ion-select-option>
+            </ion-select>
+        </ion-item>
+    </ion-list>
+    <div *ngIf="cartao" class="ion-padding" style="height: auto;">
+        <ion-item>
+            <ion-label position="floating">Numero do cartão</ion-label>
+            <ion-input></ion-input>
+        </ion-item>
+        <div class="row" style="padding-top: 15px; padding-bottom: 15px; margin-bottom: 15px;">
+            <ion-item style="width: 40%; float:left">
+                <ion-label position="floating">Validade</ion-label>
+                <ion-input></ion-input>
+            </ion-item>
+            <ion-item style="width: 40%; float:right">
+                <ion-label position="floating">CVV</ion-label>
+                <ion-input></ion-input>
+            </ion-item>
+        </div>
+    </div>
+    <div *ngIf="paypal" class="ion-padding">
+        <ion-item>
+            <ion-label position="floating">Login</ion-label>
+            <ion-input></ion-input>
+        </ion-item>
+        <ion-item style="padding-top: 15px;">
+            <ion-label position="floating">Palavra-passe</ion-label>
+            <ion-input></ion-input>
+        </ion-item>
+    </div>
+    <div *ngIf="mbway" class="ion-padding">
+        <ion-item>
+            <ion-label position="floating">Numero telefone</ion-label>
+            <ion-input></ion-input>
+        </ion-item>
+    </div>
+</ion-content>
+<ion-footer style="height:8%;">
+    <ion-button (click)="cancelar()" style="width: 45%; height:80%; padding-left: 5px;">
+        Cancelar
+    </ion-button>
+    <ion-button (click)="guardar()" style="width: 45%; height:80%; padding-right: 5px;" class="ion-float-right" *ngIf="mySelect">
+        Guardar
+    </ion-button>
+</ion-footer>

@@ -1,0 +1,73 @@
+<ion-header [translucent]="true">
+
+</ion-header>
+
+<ion-content [fullscreen]="true" class="background">
+    <div id="container" style="top: 70%;">
+        <div class="row">
+            <ion-radio-group allow-empty-selection id="radio1">
+                <ion-radio value="r1" style="margin: 10px;--color-checked:white;" disabled="true"></ion-radio>
+            </ion-radio-group>
+            <ion-radio-group allow-empty-selection id="radio2">
+                <ion-radio value="r2" style="margin: 10px;--color-checked:white;" disabled="true"></ion-radio>
+            </ion-radio-group>
+            <ion-radio-group allow-empty-selection id="radio3">
+                <ion-radio value="r3" style="margin: 10px;--color-checked:white;" disabled="true"></ion-radio>
+            </ion-radio-group>
+            <ion-radio-group allow-empty-selection id="radio4">
+                <ion-radio value="r4" style="margin: 10px;--color-checked:white;" disabled="true"></ion-radio>
+            </ion-radio-group>
+            <ion-radio-group allow-empty-selection id="radio5">
+                <ion-radio value="r5" style="margin: 10px; --color-checked:white;" disabled="true"></ion-radio>
+            </ion-radio-group>
+
+        </div>
+        <div class="row" class="ion-padding-bottom">
+            <ion-button (click)="onClick(1)" color="#fff" style="font-weight: bold; font-size: large;" class="ion-padding">
+                1
+            </ion-button>
+            <ion-button (click)="onClick(2)" color="#fff" style="font-weight: bold;font-size: large;" class="ion-padding">
+                2
+            </ion-button>
+            <ion-button (click)="onClick(3)" color="#fff" style="font-weight: bold;font-size: large;" class="ion-padding">
+                3
+            </ion-button>
+        </div>
+        <div class="row" class="ion-padding-bottom">
+            <ion-button (click)="onClick(4)" color="#fff" style="font-weight: bold; font-size: large;" class="ion-padding">
+                4
+            </ion-button>
+            <ion-button (click)="onClick(5)" color="#fff" style="font-weight: bold;font-size: large;" class="ion-padding">
+                5
+            </ion-button>
+            <ion-button (click)="onClick(6)" color="#fff" style="font-weight: bold;font-size: large;" class="ion-padding">
+                6
+            </ion-button>
+        </div>
+        <div class="row" class="ion-padding-bottom">
+            <ion-button (click)="onClick(7)" color="#fff" style="font-weight: bold; font-size: large;" class="ion-padding">
+                7
+            </ion-button>
+            <ion-button (click)="onClick(8)" color="#fff" style="font-weight: bold;font-size: large;" class="ion-padding">
+                8
+            </ion-button>
+            <ion-button (click)="onClick(9)" color="#fff" style="font-weight: bold;font-size: large;" class="ion-padding">
+                9
+            </ion-button>
+        </div>
+        <div class="row" class="ion-padding-bottom">
+            <ion-button (click)="digital()" color="#fff" style="font-weight: bold; font-size: large;" class="ion-padding">
+                <ion-icon name="finger-print-outline"></ion-icon>
+            </ion-button>
+            <ion-button (click)="onClick(9)" color="#fff" style="font-weight: bold;font-size: large;" class="ion-padding">
+                0
+            </ion-button>
+            <ion-button (click)="backspace()" color="#fff" style="font-weight: bold; font-size: large;" class="ion-padding">
+                <ion-icon name="backspace-outline"></ion-icon>
+            </ion-button>
+        </div>
+    </div>
+    <div id="container" style="top: 95%;">
+        <a href="#" style="padding-top: 30px;" color="white">Criar uma nova conta</a>
+    </div>
+</ion-content>

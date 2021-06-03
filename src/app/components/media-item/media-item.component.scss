@@ -1,0 +1,32 @@
+img{
+    height: 4em;
+    width: 100%;
+    
+    object-fit: cover;
+    padding: 0px;
+    margin: 0px;
+    margin-top: 5px;
+    margin-bottom: 5px;
+}
+
+ion-card{
+    max-width: 6.5em;
+    max-height: 19em;
+}
+
+ion-card-content{
+    padding: 0px;
+    margin: 0px;
+}
+
+.topBox{
+    padding: 0px;
+    margin: 5px;
+}
+
+.bottonBox{
+    margin: 0px;
+    padding: 0px;
+    margin-bottom: 5px;
+    margin-left: 5px;
+}

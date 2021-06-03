@@ -1,0 +1,108 @@
+<ion-header>
+    <ion-toolbar *ngIf="isSelectMode()">
+        <ion-button size="small" color="dark" fill="clear" slot="start" (click)="cancelSelect()">
+            <ion-icon slot="icon-only" name="close"></ion-icon>
+        </ion-button>
+
+        <ion-title size="medium"> {{getMsgCounter()}} </ion-title>
+
+        <ion-button size="small" color="dark" fill="clear" slot="end" (click)="selectAll()">
+            <ion-icon slot="icon-only" name="checkmark-done"></ion-icon>
+        </ion-button>
+        <ion-button size="small" color="dark" fill="clear" slot="end" (click)="unSelectAll()">
+            <ion-icon slot="icon-only" name="square-outline"></ion-icon>
+        </ion-button>
+    </ion-toolbar>
+</ion-header>
+
+<ion-content>
+
+    <ion-grid fixed>
+        <ion-row>
+            <ion-col size="12" class="title">
+                <ion-text>
+                    <h1 *ngIf="!isSelectMode()">Palco <span class="complementTitle">(hoje)</span></h1>
+                    <h1 class="titleSelectMode" *ngIf="isSelectMode()">Palco (hoje)
+                    </h1>
+                </ion-text>
+            </ion-col>
+        </ion-row>
+        <ion-row>
+            <ion-col size="12">
+                <app-media-item route="momentos" image={{i.value.src}} place={{i.value.localizacao}}
+                    time={{i.value.hora}} *ngFor="let i of albuns.slice(0,3) | keyvalue">
+                </app-media-item>
+            </ion-col>
+        </ion-row>
+    </ion-grid>
+
+    <ion-grid fixed>
+        <ion-row>
+            <ion-col size="12" class="title">
+                <ion-text>
+                    <h1 *ngIf="!isSelectMode()">Cartaz <span class="complementTitle">(última semana)</span></h1>
+                    <h1 class="titleSelectMode" *ngIf="isSelectMode()">Cartaz (última semana)</h1>
+                </ion-text>
+            </ion-col>
+        </ion-row>
+        <ion-row>
+            <ion-col size="12">
+                <app-media-item route="momentos" image={{i.value.src}} place={{i.value.localizacao}}
+                    time={{i.value.hora}} *ngFor="let i of albuns.slice(3,9) | keyvalue">
+                </app-media-item>
+            </ion-col>
+        </ion-row>
+    </ion-grid>
+
+    <ion-grid fixed>
+        <ion-row>
+            <ion-col size="12" class="title">
+                <ion-text>
+                    <h1 *ngIf="!isSelectMode()">Bastidores <span class="complementTitle">(outros)</span></h1>
+                    <h1 class="titleSelectMode" *ngIf="isSelectMode()">Bastidores(outros)</h1>
+                </ion-text>
+            </ion-col>
+        </ion-row>
+        <ion-row>
+            <ion-col size="12">
+                <app-media-item route="momentos" image={{i.value.src}} place={{i.value.localizacao}}
+                    time={{i.value.hora}} *ngFor="let i of albuns.slice(9,15) | keyvalue">
+                </app-media-item>
+            </ion-col>
+        </ion-row>
+    </ion-grid>
+
+    <ion-fab *ngIf="!isSelectMode()" vertical="bottom" horizontal="start" slot="fixed"
+        style="margin-bottom:15.3%; margin-left:15.3%;">
+        <ion-fab-button color="light">
+            <ion-icon name="add-outline"></ion-icon>
+        </ion-fab-button>
+        <ion-fab-list side="top">
+            <ion-fab-button (click)="presentModalVivenciar()">
+                <ion-icon name="camera-outline"></ion-icon>
+            </ion-fab-button>
+        </ion-fab-list>
+        <ion-fab-list side="bottom">
+            <ion-fab-button (click)="logoff()">
+                <ion-icon name="log-out-outline"></ion-icon>
+            </ion-fab-button>
+        </ion-fab-list>
+        <ion-fab-list side="start">
+            <ion-fab-button (click)="presentModalNotifica()">
+                <ion-icon name="notifications-outline"></ion-icon>
+                <ion-badge>4</ion-badge>
+            </ion-fab-button>
+        </ion-fab-list>
+        <ion-fab-list side="end">
+            <ion-fab-button (click)="presentModalSearch()">
+                <ion-icon name="search-outline"></ion-icon>
+            </ion-fab-button>
+        </ion-fab-list>
+    </ion-fab>
+
+</ion-content>
+<ion-footer>
+    <ion-toolbar id="tabP" hidden>
+        <app-tabs deleteDirect="false"></app-tabs>
+    </ion-toolbar>
+</ion-footer>

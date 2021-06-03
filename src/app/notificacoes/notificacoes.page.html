@@ -1,0 +1,59 @@
+<ion-header>
+    <ion-toolbar>
+        <ion-title size="medium">Notificações</ion-title>
+
+        <ion-button size="small" color="dark" fill="clear" slot="end" (click)="dismiss()">
+            <ion-icon slot="icon-only" name="close"></ion-icon>
+        </ion-button>
+
+    </ion-toolbar>
+
+</ion-header>
+
+<ion-content>
+    <ion-list>
+        <ion-item (click)="onClick()">
+            <ion-avatar slot="start">
+                <img src="../../assets/img/jb.png">
+            </ion-avatar>
+            <ion-label>
+                <h2>Jackson Júnior</h2>
+                <h4>Partilhou um momento consigo!</h4>
+            </ion-label>
+            <ion-icon color="dark" slot="end" name="notifications-outline"></ion-icon>
+        </ion-item>
+
+        <ion-item (click)="onClick2()">
+            <ion-avatar slot="start">
+                <img src="../../assets/img/leo.png">
+            </ion-avatar>
+            <ion-label>
+                <h2>Leonardo Lopez</h2>
+                <h4>Partilhou um álbum consigo!</h4>
+            </ion-label>
+            <ion-icon color="dark" slot="end" name="notifications-outline"></ion-icon>
+        </ion-item>
+
+        <ion-item (click)="onClick()">
+            <ion-avatar slot="start">
+                <img src="../../assets/img/valdo.png">
+            </ion-avatar>
+            <ion-label>
+                <h2>Valdo Mpinga</h2>
+                <h4>Partilhou um momento consigo!</h4>
+            </ion-label>
+            <ion-icon color="dark" slot="end" name="notifications-outline"></ion-icon>
+        </ion-item>
+
+        <ion-item (click)="onClick2()">
+            <ion-avatar slot="start">
+                <img src="../../assets/img/nat.png">
+            </ion-avatar>
+            <ion-label>
+                <h2>Natália Fusco</h2>
+                <h4>Partilhou um álbum consigo!</h4>
+            </ion-label>
+            <ion-icon color="dark" slot="end" name="notifications-outline"></ion-icon>
+        </ion-item>
+    </ion-list>
+</ion-content>

@@ -1,0 +1,20 @@
+<ion-card style="width: 28%;display: inline-block;" *ngIf="isActive()" tappable (touchstart)="startPress()"
+    (touchend)="endPress()" (click)="onClick($event)">
+
+
+    <div class="topBox">
+        <ion-checkbox id="check" class="ion-float-left" *ngIf="isCheckBoxVisible()" 
+        [ng-checked]="checked" [ng-model]="checked" (click)="onClick($event)">
+        </ion-checkbox>
+        <ion-text class="ion-float-right">
+            {{time}}
+        </ion-text>
+    </div>
+
+    <ion-card-content>
+        <img src={{image}} />
+        <ion-text class="bottonBox">
+            {{place}}
+        </ion-text>
+    </ion-card-content>
+</ion-card>

@@ -1,0 +1,100 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-title>Dados Entrega</ion-title>
+    <ion-buttons slot="start">
+      <ion-back-button></ion-back-button>
+    </ion-buttons>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <form [formGroup]="moradaForm" (ngSubmit)="submitForm()" novalidate>
+    <div style="height: 40%;" class="ion-padding">
+      <ion-item-divider>
+        <ion-label>
+          Endereço de entrega
+        </ion-label>
+      </ion-item-divider>
+      <ion-item>
+        <ion-label position="floating">Descrição da morada</ion-label>
+        <ion-input type="text" formControlName="descMorada"></ion-input>
+      </ion-item>
+      <ion-text class="ion-padding" color="danger" *ngIf="isSubmitted && formControls.descMorada.errors?.required">
+        Descrição da morada é de preenchimento obrigatório
+      </ion-text>
+      <ion-text class="ion-padding" color="danger" *ngIf="isSubmitted && formControls.descMorada.errors?.minlength">
+        Descrição da morada deverá ter pelo menos 3 caracteres
+      </ion-text>
+      <ion-item style="padding-top: 15px;">
+        <ion-label position="floating">Morada</ion-label>
+        <ion-input formControlName="morada"></ion-input>
+      </ion-item>
+      <ion-text class="ion-padding" color="danger" *ngIf="isSubmitted && formControls.morada.errors?.required">
+        A morada é de preenchimento obrigatório
+      </ion-text>
+      <ion-text class="ion-padding" color="danger" *ngIf="isSubmitted && formControls.morada.errors?.minlength">
+        A morada deverá ter pelo menos 5 caracteres
+      </ion-text>
+      <div class="row" style="padding-top: 15px; padding-bottom: 15px; margin-bottom: 15px;">
+        <ion-item style="width: 40%; float:left">
+          <ion-label position="floating">Codigo postal</ion-label>
+          <ion-input type="text" formControlName="codPostal"></ion-input>
+        </ion-item>
+        <ion-text class="ion-padding" color="danger" *ngIf="isSubmitted && formControls.codPostal.errors?.required">
+          Codigo postal é de preenchimento obrigatório
+        </ion-text>
+        <ion-text class="ion-padding" color="danger" *ngIf="isSubmitted && formControls.codPostal.errors?.pattern">
+          O código postal deve estar no formato XXXX-XXX
+        </ion-text>
+        <ion-item style="width: 40%; float:right">
+          <ion-label position="floating">Cidade</ion-label>
+          <ion-input formControlName="cidade"></ion-input>
+        </ion-item>
+        <ion-text class="ion-padding" color="danger" *ngIf="isSubmitted && formControls.cidade.errors?.required">
+            Cidade é de preenchimento obrigatório
+          </ion-text>
+          <ion-text class="ion-padding" color="danger" *ngIf="isSubmitted && formControls.cidade.errors?.pattern">
+            A cidade não pode conter numeros.
+          </ion-text>
+      </div>
+    </div>
+
+    <div style="height: 40%; padding-top: 25px;" class="ion-padding">
+      <ion-item-divider>
+        <ion-label>
+          Dados do destinatário
+        </ion-label>
+      </ion-item-divider>
+      <ion-item>
+        <ion-label position="floating">Nome</ion-label>
+        <ion-input formControlName="nome"></ion-input>
+      </ion-item>
+      <ion-item style="padding-top: 15px;">
+        <ion-label position="floating">Número de telefone</ion-label>
+        <ion-input type="number" maxlength="9" formControlName="telefone"></ion-input>
+      </ion-item>
+      <ion-item style="padding-top: 15px;">
+        <ion-label position="floating">Número de contribuinte</ion-label>
+        <ion-input type="number" maxlength="9" formControlName="contribuinte"></ion-input>
+      </ion-item>
+    </div>
+
+    <div class="div-Footer row" style="width: 100%">
+      <ion-item style="width: 50%; float:left" class="transparent-background-color" lines="none">
+        <ion-button (click)="cancelar()" style="width: 100%; height: 70%; float: left;">
+          Cancelar
+        </ion-button>
+      </ion-item>
+
+      <ion-item style="width: 50%; float:right" class="transparent-background-color" lines="none">
+        <ion-button type="submit" color="success" style="width: 100%; height: 70%; float: right;">
+          Guardar
+        </ion-button>
+      </ion-item>
+    </div>
+  </form>
+</ion-content>
+
+<ion-footer>
+
+</ion-footer>

@@ -1,0 +1,64 @@
+<ion-header translucent>
+    <ion-toolbar class="transparent-background-color">
+        <ion-searchbar></ion-searchbar>
+    </ion-toolbar>
+</ion-header>
+<ion-content style="height: 40%;" class="transparent-background-color">
+    <ion-list class="transparent-background-color">
+        <ion-item *ngFor="let amigo of amigos">
+            <ion-avatar style="margin-right: 15px ;">
+                <img [src]="amigo.picture.medium" />
+            </ion-avatar>
+            {{amigo.name.first}} {{amigo.name.last}}
+            <ion-button slot="end" (click)="partilhaAmiguinho($event)">
+                Partilha
+            </ion-button>
+        </ion-item>
+    </ion-list>
+
+</ion-content>
+<ion-content>
+    <hr>
+    <ion-row class="ion-justify-content-center transparent-background-color">
+        <ion-item class="transparent-background-color">
+            <ion-label class="ion-text-wrap" style="padding-left: 15px;">mymoments.com/</ion-label>
+            <ion-input type="text" placeholder="Viana"></ion-input>
+        </ion-item>
+    </ion-row>
+
+    <ion-row class="ion-justify-content-center transparent-background-color" style="border-bottom: 1px;border-color: aliceblue;">
+        <ion-item (click)="partilhaAmiguinho($event)" class="transparent-background-color" lines="none">
+            <ion-button>
+                Criar link
+            </ion-button>
+        </ion-item>
+    </ion-row>
+
+
+    <ion-label style="padding-left: 15px;">Partilha em apps</ion-label>
+    <ion-row class="ion-justify-content-center transparent-background-color">
+
+        <ion-col size="auto">
+            <ion-fab-button color="light">
+                <ion-icon name="mail-open-outline"></ion-icon>
+            </ion-fab-button>
+        </ion-col>
+        <ion-col size="auto">
+            <ion-fab-button color="light">
+                <ion-icon name="logo-whatsapp"></ion-icon>
+            </ion-fab-button>
+        </ion-col>
+        <ion-col size="auto">
+            <ion-fab-button color="light">
+                <ion-icon name="logo-facebook"></ion-icon>
+            </ion-fab-button>
+        </ion-col>
+        <ion-col size="auto">
+            <ion-fab-button color="light">
+                <ion-icon name="logo-instagram"></ion-icon>
+            </ion-fab-button>
+        </ion-col>
+    </ion-row>
+
+
+</ion-content>

@@ -1,0 +1,54 @@
+<ion-header>
+    <ion-toolbar>
+        <ion-title>Revelar momento</ion-title>
+    </ion-toolbar>
+</ion-header>
+
+<ion-content>
+    <ion-list class="ion-padding" style="background-color: transparent; height: 40%;">
+        <ion-list-header>
+            <ion-title style="font-size: 18px;">Endereço de entrega</ion-title>
+        </ion-list-header>
+        <ion-radio-group name="auto" value="tesla">
+            <ion-item class="transparent-background-color">
+                <ion-radio value="tesla" checked></ion-radio>
+                <ion-icon style="padding-left:15px;" name="home-outline"></ion-icon>
+                <ion-label style="padding-left:10px;">
+                    <h2>ESTG</h2>
+                    <p>Avenida do Atlântico</p>
+                </ion-label>
+            </ion-item>
+        </ion-radio-group>
+    </ion-list>
+    <ion-button style="float: right; padding-right: 10px;" (click)="novaMorada()">
+        Nova morada
+    </ion-button>
+
+    <ion-item-divider></ion-item-divider>
+
+    <ion-list class="ion-padding" style="background-color: transparent;  height: 40%;">
+        <ion-list-header>
+            <ion-title style="font-size: 18px;">Forma de pagamento</ion-title>
+        </ion-list-header>
+        <ion-radio-group name="auto" value="tesla">
+            <ion-item class="transparent-background-color">
+                <ion-radio value="tesla"></ion-radio>
+                <ion-icon style="padding-left:15px;" name="card-outline"></ion-icon>
+                <ion-label style="padding-left:10px;">
+                    <h2>**** **** **** 9874</h2>
+                </ion-label>
+            </ion-item>
+        </ion-radio-group>
+    </ion-list>
+    <ion-button style="float: right; padding-right: 10px;" (click)="novaFormaPagamento()">
+        Novo método
+    </ion-button>
+</ion-content>
+<ion-footer style="height:8%;">
+    <ion-button (click)="cancelar()" style="width: 45%; height:80%; padding-left: 5px;"  color="danger">
+        Cancelar
+    </ion-button>
+    <ion-button (click)="nextStep()" style="width: 45%; height:80%; padding-right: 5px;" class="ion-float-right">
+        Finalizar
+    </ion-button>
+</ion-footer>
