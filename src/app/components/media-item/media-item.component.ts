@@ -2,7 +2,6 @@ import { Component, OnInit, Input, ViewChild } from '@angular/core';
 import { NavController } from '@ionic/angular';
 import { Subject } from 'rxjs';
 import { Router, NavigationExtras } from '@angular/router';
-import { by, element } from 'protractor';
 
 @Component({
   selector: 'app-media-item',
