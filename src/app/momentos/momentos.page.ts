@@ -154,6 +154,7 @@ export class MomentosPage implements OnInit {
 
   ngAfterViewInit(): void {
     this.cardArray = this.mediaItems.toArray();
+    console.log(this.cardArray);
     this.subjectDelete = new Subject();
     this.toolbarVisibleStatus = document.getElementById("tab");
 
