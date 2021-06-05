@@ -30,6 +30,7 @@ export class PaginaInicialPage implements OnInit, AfterViewInit {
   private subjectDelete: Subject<boolean>;
   private toolbarVisibleStatus: any;
 
+
   public albuns: any[] = [];
 
   constructor(private selectModeService: SelectModeService, public modalController: ModalController, public alertController: AlertController, public navRoot: NavController, public toastController: ToastController, public platform: Platform) {
@@ -68,12 +69,10 @@ export class PaginaInicialPage implements OnInit, AfterViewInit {
 
     this.cardArray.forEach(item => {
       item.getStatus().subscribe(selectMode => {
-        if (selectMode) {
-          this.selectModeService.enableSelectMode(this.cardArray);
-          this.selectMode = true;
-          this.toolbarVisibleStatus.removeAttribute("hidden");
-          this.subjectDelete.next(true);
-        }
+        this.selectModeService.enableSelectMode(this.cardArray);
+        this.selectMode = true;
+        this.toolbarVisibleStatus.removeAttribute("hidden");
+        this.subjectDelete.next(true);
       }
       );
       item.getCounterStatus().subscribe(counterStatus => {

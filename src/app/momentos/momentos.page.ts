@@ -22,8 +22,6 @@ export class MomentosPage implements OnInit {
   private selectMode: boolean;
   private selectedCounter: number;
   private subjectDelete: Subject<boolean>;
-  private PresubjectDelete: Subject<boolean>;
-  private PresubjectShare: Subject<boolean>;
   public toolbarVisibleStatus: any;
   public albumName: string;
 
@@ -153,10 +151,8 @@ export class MomentosPage implements OnInit {
   ngAfterViewInit(): void {
     this.cardArray = this.mediaItems.toArray();
     this.subjectDelete = new Subject();
-    this.PresubjectDelete = new Subject();
-    this.PresubjectShare = new Subject();
-    this.toolbarVisibleStatus = document.getElementById("tabP");
-    console.log(this.tabBar);
+    this.toolbarVisibleStatus = document.getElementById("tab");
+
 
     this.subjectDelete.subscribe(obs => {
 
@@ -181,11 +177,9 @@ export class MomentosPage implements OnInit {
     this.cardArray.forEach(item => {
       item.getStatus().subscribe(selectMode => {
         this.selectModeService.enableSelectMode(this.cardArray);
-        if (selectMode) {
-          this.selectMode = true;
-          this.toolbarVisibleStatus.removeAttribute("hidden");
-          this.subjectDelete.next(true);
-        }
+        this.selectMode = true;
+        this.toolbarVisibleStatus.removeAttribute("hidden");
+        this.subjectDelete.next(true);
       }
       );
       item.getCounterStatus().subscribe(counterStatus => {
@@ -237,10 +231,6 @@ export class MomentosPage implements OnInit {
   }
   public getNavRoot(): NavController {
     return this.navRoot;
-  }
-
-  verMomento(evento) {
-    this.navRoot.navigateForward('detalhe-momento');
   }
 
 
