@@ -27,6 +27,19 @@
                     "DCB"
                 ],
                 "src": "../../assets/img/albuns/f02.jpg"
+            },
+            {
+                "video": "true",
+                "titulo": "picanha",
+                "hora": "07:54",
+                "data": "2021-02-31",
+                "descricao": "Festa animada.",
+                "detalhes": "0.8MP 1440x720 3.4MB",
+                "tags": [
+                    "festa",
+                    "DCB"
+                ],
+                "src": "../../assets/img/albuns/v01.mp4"
             }
         ]
     },

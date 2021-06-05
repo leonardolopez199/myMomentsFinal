@@ -30,6 +30,7 @@ export class MediaItemComponent implements OnInit {
   @Input('descricao') descricao: string;
   @Input('detalhes') detalhes: string;
   @Input('tags') tags: string;
+  @Input('videoItem') video: string;
 
   public id: number;
   private checkbox: any;
@@ -123,7 +124,8 @@ export class MediaItemComponent implements OnInit {
           data: this.data,
           descricao: this.descricao,
           detalhes: this.detalhes,
-          tags: this.tags
+          tags: this.tags,
+          video: this.video
         }
       };
       this.router.navigate([this.route], navigationExtras);

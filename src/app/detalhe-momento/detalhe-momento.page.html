@@ -11,8 +11,11 @@
 
 <ion-content>
 
-    <div>
+    <div *ngIf="!video">
         <img src="{{image}}" />
+    </div>
+    <div *ngIf="video">
+        <video src="{{image}}" autoplay controls></video>
     </div>
 
 
