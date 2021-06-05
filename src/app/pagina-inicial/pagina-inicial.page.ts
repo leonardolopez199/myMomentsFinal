@@ -154,13 +154,9 @@ export class PaginaInicialPage implements OnInit, AfterViewInit {
   }
 
   async presentModalSearch() {
-    var item = this.medias[Math.floor(Math.random() * this.medias.length)];
     const modal = await this.modalController.create({
       component: ModalSearchPage,
       cssClass: 'modal-search-css',
-      componentProps:{
-        data:item
-      }
     });
     return await modal.present();
 
