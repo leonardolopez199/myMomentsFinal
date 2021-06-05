@@ -23,6 +23,7 @@ export class DetalheMomentoPage implements OnInit {
   public time: string;
   public title: string;
   public tags: string[];
+  public video: boolean;
 
   constructor(public modalController: ModalController, public ctrl: NavController, private router: Router) {
     if (this.router.getCurrentNavigation().extras.state) {
@@ -33,6 +34,7 @@ export class DetalheMomentoPage implements OnInit {
       this.time = this.router.getCurrentNavigation().extras.state.time;
       this.title = this.router.getCurrentNavigation().extras.state.titulo;
       this.tags = this.router.getCurrentNavigation().extras.state.tags.split(',');
+      this.video = this.router.getCurrentNavigation().extras.state.video == "true" ? true : false;
     }
   }
 
@@ -61,7 +63,8 @@ export class DetalheMomentoPage implements OnInit {
         details: this.details,
         time: this.time,
         title: this.title,
-        tags: this.tags
+        tags: this.tags,
+        video: this.video
       }
     });
     return await modal.present();
