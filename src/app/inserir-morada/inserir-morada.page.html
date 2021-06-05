@@ -101,6 +101,9 @@
             <ion-text class="ion-padding" color="danger" *ngIf="isSubmitted && formControls.telefone.errors?.required" style="font-size: 12px;">
                 Telefone é de preenchimento obrigatório
             </ion-text>
+            <ion-text class="ion-padding" color="danger" *ngIf="isSubmitted && formControls.telefone.errors?.pattern" style="font-size: 12px;">
+                Telefone deve estar no formato XXXXXXXXX
+            </ion-text>
             <!------------------------------------------------------------------------------------------------->
             <!--   <ion-item style="padding-top: 15px;">
                 <ion-label position="floating">Número de contribuinte</ion-label>
@@ -115,7 +118,7 @@
             <!------------------------------------------------------------------------------------------------->
         </div>
 
-        <div class="div-Footer row" style="width: 100%">
+        <div class="div-Footer row" style="width: 100%; padding-bottom: 15px;">
             <ion-item style="width: 50%; float:left" class="transparent-background-color" lines="none">
                 <ion-button (click)="cancelar()" style="width: 100%; height: 75%; float: left;" color="danger">
                     Cancelar
@@ -130,7 +133,3 @@
         </div>
     </form>
 </ion-content>
-
-<ion-footer>
-
-</ion-footer>

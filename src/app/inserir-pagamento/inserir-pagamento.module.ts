@@ -1,7 +1,6 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
-import { FormsModule } from '@angular/forms';
-
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { IonicModule } from '@ionic/angular';
 
 import { InserirPagamentoPageRoutingModule } from './inserir-pagamento-routing.module';
@@ -13,6 +12,7 @@ import { InserirPagamentoPage } from './inserir-pagamento.page';
     CommonModule,
     FormsModule,
     IonicModule,
+    ReactiveFormsModule,
     InserirPagamentoPageRoutingModule
   ],
   declarations: [InserirPagamentoPage]

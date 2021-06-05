@@ -28,114 +28,117 @@
 @import "~@ionic/angular/css/text-alignment.css";
 @import "~@ionic/angular/css/text-transformation.css";
 @import "~@ionic/angular/css/flex-utils.css";
-
 ion-content.background {
-  --background: url(./assets/img/loginBackImg.jpg) 0 0/100% 100% no-repeat;
-  opacity: 0.8;
+    --background: url(./assets/img/loginBackImg.jpg) 0 0/100% 100% no-repeat;
+    opacity: 0.8;
 }
 
 ion-backdrop {
-  --backdrop-opacity: 0.7;
+    --backdrop-opacity: 0.7;
 }
 
 .modal-notification-css .modal-wrapper {
-  max-height: 45%;
-  top: 0%;
-  position: absolute;
-  display: block;
+    max-height: 45%;
+    top: 0%;
+    position: absolute;
+    display: block;
 }
 
 .modal-search-css .modal-wrapper {
-  height: 7%;
-  width: 90%;
-  top: 50%;
-  border-radius: 25px;
+    height: 7%;
+    width: 90%;
+    top: 50%;
+    border-radius: 25px;
 }
 
 .modal-vivenciar-css .modal-wrapper {
-  height: 50%;
-  width: 90%;
-  top: 20%;
-  border-radius: 15px;
+    height: 50%;
+    width: 90%;
+    top: 20%;
+    border-radius: 15px;
 }
 
 .lower-content {
-  flex-grow: 1;
-  display: flex;
-  align-items: flex-end;
-  justify-content: center;
+    flex-grow: 1;
+    display: flex;
+    align-items: flex-end;
+    justify-content: center;
 }
 
 .modal-apagar-css .modal-wrapper {
-  height: 33%;
-  width: 70%;
-  top: 20%;
-  border-radius: 15px;
+    height: 33%;
+    width: 70%;
+    top: 20%;
+    border-radius: 15px;
 }
 
 .modal-fim-compra-css .modal-wrapper {
-  height: 33%;
-  width: 70%;
-  top: 20%;
-  border-radius: 15px;
+    height: 33%;
+    width: 70%;
+    top: 20%;
+    border-radius: 15px;
 }
 
 .modal-partilhar-css .modal-wrapper {
-  height: 70%;
-  width: 100%;
-  bottom: 0%;
-  position: absolute;
-  display: block;
-  border-top-left-radius: 25px;
-  border-top-right-radius: 25px;
+    height: 70%;
+    width: 100%;
+    bottom: 0%;
+    position: absolute;
+    display: block;
+    border-top-left-radius: 25px;
+    border-top-right-radius: 25px;
 }
 
 .transparent-background-color {
-  --background: transparent;
+    --background: transparent;
 }
 
 .my-detal-moment-modal-css .modal-wrapper {
-  height: 60%;
-  width: 100%;
-  bottom: 0%;
-  position: absolute;
-  display: block;
-  border-top-left-radius: 25px;
-  border-top-right-radius: 25px;
+    height: 60%;
+    width: 100%;
+    bottom: 0%;
+    position: absolute;
+    display: block;
+    border-top-left-radius: 25px;
+    border-top-right-radius: 25px;
 }
 
 .datetimeColor {
-  color: rgb(125, 125, 125) !important;
+    color: rgb(125, 125, 125) !important;
 }
 
 .padding5 {
-  padding: 5px;
+    padding: 5px;
 }
 
 .radio-disabled {
-  opacity: 1;
+    opacity: 1;
 }
 
 .centra-safada {
-  text-align: center;
-  position: absolute;
-  left: 0;
-  right: 0;
-  top: 50%;
-  transform: translateY(-50%);
+    text-align: center;
+    position: absolute;
+    left: 0;
+    right: 0;
+    top: 50%;
+    transform: translateY(-50%);
 }
 
 .primary-color {
-  color: #3880ff;
+    color: #3880ff;
 }
 
 .disable-color {
-  color: #A9A9A9;
+    color: #A9A9A9;
 }
 
 .div-Footer {
-  position: fixed;
-  margin-left: 0%;
-  padding-left: 0%;
-  bottom: 0;
+    position: fixed;
+    margin-left: 0%;
+    padding-left: 0%;
+    bottom: 0;
+}
+
+.ion-padding-2 {
+    padding: 32px;
 }

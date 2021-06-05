@@ -7,54 +7,139 @@
     </ion-toolbar>
 </ion-header>
 
-<ion-content class="ion-padding">
-    <ion-list>
-        <ion-item>
-            <ion-select placeholder="Selecionar metodo de pagamento" (ionChange)="onSelectChange($event)">
-                <ion-select-option value="cartao"> Cartão de credito</ion-select-option>
-                <ion-select-option value="paypal">PayPal</ion-select-option>
-                <ion-select-option value="mbway">MBWay</ion-select-option>
-            </ion-select>
-        </ion-item>
-    </ion-list>
-    <div *ngIf="cartao" class="ion-padding" style="height: auto;">
-        <ion-item>
-            <ion-label position="floating">Numero do cartão</ion-label>
-            <ion-input></ion-input>
-        </ion-item>
-        <div class="row" style="padding-top: 15px; padding-bottom: 15px; margin-bottom: 15px;">
-            <ion-item style="width: 40%; float:left">
-                <ion-label position="floating">Validade</ion-label>
-                <ion-input></ion-input>
+<ion-content>
+    <div class="ion-padding" style="padding-bottom: 0;">
+        <ion-list>
+            <ion-item lines="none">
+                <ion-select placeholder="Selecionar metodo de pagamento" (ionChange)="onSelectChange($event)">
+                    <ion-select-option value="cartao"> Cartão de credito</ion-select-option>
+                    <ion-select-option value="paypal">PayPal</ion-select-option>
+                    <ion-select-option value="mbway">MBWay</ion-select-option>
+                </ion-select>
             </ion-item>
-            <ion-item style="width: 40%; float:right">
-                <ion-label position="floating">CVV</ion-label>
-                <ion-input></ion-input>
-            </ion-item>
-        </div>
+        </ion-list>
     </div>
-    <div *ngIf="paypal" class="ion-padding">
-        <ion-item>
-            <ion-label position="floating">Login</ion-label>
-            <ion-input></ion-input>
-        </ion-item>
-        <ion-item style="padding-top: 15px;">
-            <ion-label position="floating">Palavra-passe</ion-label>
-            <ion-input></ion-input>
-        </ion-item>
+    <div *ngIf="cartao">
+        <form [formGroup]="cartaoForm" (ngSubmit)="submitForm()" novalidate>
+            <div class="ion-padding-2">
+                <ion-item>
+                    <ion-label position="floating">Número do cartão</ion-label>
+                    <ion-input formControlName="cartao"></ion-input>
+                </ion-item>
+                <ion-text class="ion-padding" color="danger" *ngIf="isSubmittedCartao && cartaoformControls.cartao.errors?.required" style="font-size: 12px;">
+                    Número do cartão é de preenchimento obrigatório
+                </ion-text>
+                <ion-text class="ion-padding" color="danger" *ngIf="isSubmittedCartao && cartaoformControls.cartao.errors?.pattern" style="font-size: 12px;">
+                    Número do cartão deve estar no formato XXXX XXXX XXXX XXXX
+                </ion-text>
+                <div class="row" style="padding-top: 15px; padding-bottom: 15px; margin-bottom: 15px;">
+                    <ion-row>
+                        <ion-col>
+                            <ion-row>
+                                <ion-item style="width: 100%; float:left">
+                                    <ion-label position="floating">Validade</ion-label>
+                                    <ion-input formControlName="validade"></ion-input>
+                                </ion-item>
+                            </ion-row>
+                            <ion-row>
+                                <ion-text class="ion-padding" color="danger" *ngIf="isSubmittedCartao && cartaoformControls.validade.errors?.required" style="font-size: 12px; padding-bottom: 0px;">
+                                    Validade é de preenchimento obrigatório
+                                </ion-text>
+                                <ion-text class="ion-padding" color="danger" *ngIf="isSubmittedCartao && cartaoformControls.validade.errors?.pattern" style="font-size: 12px; padding-bottom: 0px;">
+                                    Validade deve estar no formato XX/XXXX
+                                </ion-text>
+                            </ion-row>
+                        </ion-col>
+                        <ion-col>
+                            <ion-row>
+                                <ion-item style="width: 100%; float:right">
+                                    <ion-label position="floating">CVV</ion-label>
+                                    <ion-input formControlName="cvv"></ion-input>
+                                </ion-item>
+                            </ion-row>
+                            <ion-row>
+                                <ion-text class="ion-padding" color="danger" *ngIf="isSubmittedCartao && cartaoformControls.cvv.errors?.required" style="font-size: 12px; padding-bottom: 0px;">
+                                    CVV é de preenchimento obrigatório
+                                </ion-text>
+                                <ion-text class="ion-padding" color="danger" *ngIf="isSubmittedCartao && cartaoformControls.cvv.errors?.pattern" style="font-size: 12px; padding-bottom: 0px;">
+                                    CVV deve estar no formato XXX
+                                </ion-text>
+                            </ion-row>
+                        </ion-col>
+                    </ion-row>
+                </div>
+            </div>
+            <div class="div-Footer row" style="width: 100%; height: 45px; padding-bottom: 15px;">
+                <ion-button (click)="cancelar()" style="width: 45%; height:100%; padding-left: 5px;" color="danger">
+                    Cancelar
+                </ion-button>
+                <ion-button type="submit" color="success" style="width: 45%; height:100%; padding-right: 5px;" class="ion-float-right">
+                    Guardar
+                </ion-button>
+            </div>
+        </form>
     </div>
-    <div *ngIf="mbway" class="ion-padding">
-        <ion-item>
-            <ion-label position="floating">Numero telefone</ion-label>
-            <ion-input></ion-input>
+    <div *ngIf="paypal">
+        <form [formGroup]="paypalForm" (ngSubmit)="submitForm()" novalidate>
+            <div class="ion-padding-2">
+                <ion-item>
+                    <ion-label position="floating">Email</ion-label>
+                    <ion-input formControlName="email"></ion-input>
+                </ion-item>
+                <ion-text class="ion-padding" color="danger" *ngIf="isSubmittedPaypal && paypalformControls.email.errors?.required" style="font-size: 12px;">
+                    Email é de preenchimento obrigatório
+                </ion-text>
+                <ion-text class="ion-padding" color="danger" *ngIf="isSubmittedPaypal && paypalformControls.email.errors?.pattern" style="font-size: 12px;">
+                    Email inválido
+                </ion-text>
+
+                <ion-item style="padding-top: 15px;">
+                    <ion-label position="floating">Palavra-passe</ion-label>
+                    <ion-input type="password" formControlName="senha"></ion-input>
+                </ion-item>
+                <ion-text class="ion-padding" color="danger" *ngIf="isSubmittedPaypal && paypalformControls.email.errors?.required" style="font-size: 12px;">
+                    Palavra-passe é de preenchimento obrigatório
+                </ion-text>
+            </div>
+            <div class="div-Footer row" style="width: 100%; height: 45px; padding-bottom: 15px;">
+                <ion-button (click)="cancelar()" style="width: 45%; height:100%; padding-left: 5px;" color="danger">
+                    Cancelar
+                </ion-button>
+                <ion-button type="submit" color="success" style="width: 45%; height:100%; padding-right: 5px;" class="ion-float-right">
+                    Guardar
+                </ion-button>
+            </div>
+        </form>
+    </div>
+    <div *ngIf="mbway">
+        <form [formGroup]="mbWayForm" (ngSubmit)="submitForm()" novalidate>
+            <div class="ion-padding-2">
+                <ion-item>
+                    <ion-label position="floating">Número telefone</ion-label>
+                    <ion-input formControlName="telefone"></ion-input>
+                </ion-item>
+                <ion-text class="ion-padding" color="danger" *ngIf="isSubmittedmbWay && mbwayformControls.telefone.errors?.required" style="font-size: 12px;">
+                    Telefone é de preenchimento obrigatório
+                </ion-text>
+                <ion-text class="ion-padding" color="danger" *ngIf="isSubmittedmbWay && mbwayformControls.telefone.errors?.pattern" style="font-size: 12px;">
+                    Telefone deve estar no formato XXXXXXXXX
+                </ion-text>
+            </div>
+            <div class="div-Footer row" style="width: 100%; height: 45px; padding-bottom: 15px;">
+                <ion-button (click)="cancelar()" style="width: 45%; height:100%; padding-left: 5px;" color="danger">
+                    Cancelar
+                </ion-button>
+                <ion-button type="submit" color="success" style="width: 45%; height:100%; padding-right: 5px;" class="ion-float-right">
+                    Guardar
+                </ion-button>
+            </div>
+        </form>
+    </div>
+    <div class="div-Footer row" style="width: 100%; padding-bottom: 15px;">
+        <ion-item style="width: 50%; float:left" class="transparent-background-color" lines="none">
+            <ion-button (click)="cancelar()" style="width: 100%; height: 75%; float: left;" color="danger">
+                Cancelar
+            </ion-button>
         </ion-item>
     </div>
 </ion-content>
-<ion-footer style="height:8%;">
-    <ion-button (click)="cancelar()" style="width: 45%; height:80%; padding-left: 5px;">
-        Cancelar
-    </ion-button>
-    <ion-button (click)="guardar()" style="width: 45%; height:80%; padding-right: 5px;" class="ion-float-right" *ngIf="mySelect">
-        Guardar
-    </ion-button>
-</ion-footer>
