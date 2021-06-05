@@ -39,7 +39,7 @@ export class MomentosPage implements OnInit {
       this.sliceEnd = this.router.getCurrentNavigation().extras.state.sliceEnd;
       this.albuns = JSON.parse(this.router.getCurrentNavigation().extras.state.fotos);
     }
-
+    console.log(this.albuns)
   }
 
   ngOnInit() {
@@ -145,7 +145,6 @@ export class MomentosPage implements OnInit {
   public getNavRoot(): NavController {
     return this.navRoot;
   }
-
 
 
 }

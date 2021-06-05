@@ -30,6 +30,7 @@
             },
             {
                 "video": "true",
+                "src": "../../assets/img/albuns/t01.jpg",
                 "titulo": "picanha",
                 "hora": "07:54",
                 "data": "2021-02-31",
@@ -39,7 +40,7 @@
                     "festa",
                     "DCB"
                 ],
-                "src": "../../assets/img/albuns/v01.mp4"
+                "srcv": "../../assets/img/albuns/v01.mp4"
             }
         ]
     },
