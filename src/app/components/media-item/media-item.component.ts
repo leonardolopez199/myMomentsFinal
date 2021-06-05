@@ -28,7 +28,7 @@ export class MediaItemComponent implements OnInit {
   private checkbox: any;
   public checkExist: any;
   public gamby: any;
-  
+
   constructor(private navRoot: NavController, private router: Router) {
     this.longPressActive = false;
     this.checkBoxVisible = false;
@@ -41,13 +41,13 @@ export class MediaItemComponent implements OnInit {
   }
 
   ngOnInit() {
-   // check every 100ms
+    // check every 100ms
   }
 
   ngAfterViewInit(): void {
     //this.checkbox = document.getElementById(this.id.toString());
   }
-  
+
 
   public isCheckBoxVisible(): boolean {
     return this.checkBoxVisible;
@@ -61,17 +61,17 @@ export class MediaItemComponent implements OnInit {
   }
 
   public enableCheckBox(): void {
-  //  if (!this.checkBoxVisible)
-      this.checkBoxVisible = true;
+    //  if (!this.checkBoxVisible)
+    this.checkBoxVisible = true;
   }
 
   public checkBoxStatus(status: boolean) {
-    this.longPressActive=false;
+    this.longPressActive = false;
     if (status != this.checked) {
       this.checked = status;
 
-     // if (this.event != null)
-        this.subjectChecked.next(status);        
+      // if (this.event != null)
+      this.subjectChecked.next(status);
     }
 
   }
@@ -92,7 +92,7 @@ export class MediaItemComponent implements OnInit {
   }
 
   public onClick(event?): void {
-   
+
     if (this.checkBoxVisible) {
       if (this.checked) {
         this.checkBoxStatus(false);
@@ -100,14 +100,16 @@ export class MediaItemComponent implements OnInit {
       }
       else {
         this.checkBoxStatus(true);
-        document.getElementById(this.id.toString()).setAttribute("checked","true");
+        document.getElementById(this.id.toString()).setAttribute("checked", "true");
       }
     } else {
       let navigationExtras: NavigationExtras;
 
       navigationExtras = {
         state: {
-          albumName: this.place
+          albumName: this.place,
+          imageSrc: this.image,
+          time: this.time
         }
       };
       this.router.navigate([this.route], navigationExtras);
