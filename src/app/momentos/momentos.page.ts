@@ -24,6 +24,8 @@ export class MomentosPage implements OnInit {
   private subjectDelete: Subject<boolean>;
   public toolbarVisibleStatus: any;
   public albumName: string;
+  public sliceStart: number;
+  public sliceEnd: number;
 
   public albuns: any[] = [];
 
@@ -33,6 +35,8 @@ export class MomentosPage implements OnInit {
     this.selectedCounter = 0;
     if (this.router.getCurrentNavigation().extras.state) {
       this.albumName = this.router.getCurrentNavigation().extras.state.albumName;
+      this.sliceStart = this.router.getCurrentNavigation().extras.state.sliceStart;
+      this.sliceEnd = this.router.getCurrentNavigation().extras.state.sliceEnd;
     }
 
   }

@@ -24,6 +24,8 @@ export class MediaItemComponent implements OnInit {
   @Input('image') image: string;
   @Input('place') place: string;
   @Input('time') time: string;
+  @Input('sliceStart') sliceStart: string;
+  @Input('sliceEnd') sliceEnd: string;
   public id: number;
   private checkbox: any;
   public checkExist: any;
@@ -109,7 +111,9 @@ export class MediaItemComponent implements OnInit {
         state: {
           albumName: this.place,
           imageSrc: this.image,
-          time: this.time
+          time: this.time,
+          sliceStart: this.sliceStart,
+          sliceEnd: this.sliceEnd
         }
       };
       this.router.navigate([this.route], navigationExtras);
