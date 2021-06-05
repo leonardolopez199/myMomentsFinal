@@ -24,7 +24,7 @@ export class DetalheMomentoPage implements OnInit {
   public title: string;
   public tags: string[];
   public video: boolean;
-
+  public srcv: string;
   constructor(public modalController: ModalController, public ctrl: NavController, private router: Router) {
     if (this.router.getCurrentNavigation().extras.state) {
       this.image = this.router.getCurrentNavigation().extras.state.imageSrc;
@@ -35,6 +35,7 @@ export class DetalheMomentoPage implements OnInit {
       this.title = this.router.getCurrentNavigation().extras.state.titulo;
       this.tags = this.router.getCurrentNavigation().extras.state.tags.split(',');
       this.video = this.router.getCurrentNavigation().extras.state.video == "true" ? true : false;
+      this.srcv = this.router.getCurrentNavigation().extras.state.srcv;
     }
   }
 

@@ -31,6 +31,7 @@ export class MediaItemComponent implements OnInit {
   @Input('detalhes') detalhes: string;
   @Input('tags') tags: string;
   @Input('videoItem') video: string;
+  @Input('srcv') srcv: string;
 
   public id: number;
   private checkbox: any;
@@ -125,7 +126,8 @@ export class MediaItemComponent implements OnInit {
           descricao: this.descricao,
           detalhes: this.detalhes,
           tags: this.tags,
-          video: this.video
+          video: this.video,
+          srcv: this.srcv
         }
       };
       this.router.navigate([this.route], navigationExtras);
@@ -147,6 +149,7 @@ export class MediaItemComponent implements OnInit {
   public isActive(): boolean {
     return this.active;
   }
+
 
 
   private verifyLongPress(): void {
