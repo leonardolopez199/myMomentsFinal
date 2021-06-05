@@ -45,7 +45,6 @@ export class InserirMoradaPage implements OnInit {
   public submitForm() {
     this.isSubmitted = true;
     if (!this.moradaForm.valid) {
-      //console.log(this.moradaForm.value);
       return false;
     } else {
       let navigationExtras: NavigationExtras;
@@ -55,10 +54,8 @@ export class InserirMoradaPage implements OnInit {
             dadosM: this.moradaForm.value
           }
         };
-        console.log(navigationExtras);
         this.addressInsertedToast();
         this.router.navigate(['dados-encomenda'], navigationExtras);
-      //console.log(this.moradaForm.value);
     }
   }
 

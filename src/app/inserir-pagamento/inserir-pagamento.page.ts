@@ -131,7 +131,6 @@ export class InserirPagamentoPage implements OnInit {
             dadosFM: this.mbWayForm.value
           }
         };
-        console.log(navigationExtras);
         this.paymentInsertedToast();
         this.router.navigate(['dados-encomenda'], navigationExtras);
       }
