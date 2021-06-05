@@ -36,7 +36,7 @@ export class MomentosPage implements OnInit {
     if (this.router.getCurrentNavigation().extras.state) {
       this.albumName = this.router.getCurrentNavigation().extras.state.albumName;
       this.sliceStart = this.router.getCurrentNavigation().extras.state.sliceStart;
-      this.sliceEnd = this.router.getCurrentNavigation().extras.state.sliceEnd;
+      this.sliceEnd = this.router.getCurrentNavigation().extras.state.sliceEnd;      
     }
 
   }
@@ -154,7 +154,7 @@ export class MomentosPage implements OnInit {
 
   ngAfterViewInit(): void {
     this.cardArray = this.mediaItems.toArray();
-    console.log(this.cardArray);
+    
     this.subjectDelete = new Subject();
     this.toolbarVisibleStatus = document.getElementById("tab");
 

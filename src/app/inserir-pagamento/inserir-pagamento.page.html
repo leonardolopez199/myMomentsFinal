@@ -69,13 +69,18 @@
                     </ion-row>
                 </div>
             </div>
-            <div class="div-Footer row" style="width: 100%; height: 45px; padding-bottom: 15px;">
-                <ion-button (click)="cancelar()" style="width: 45%; height:100%; padding-left: 5px;" color="danger">
-                    Cancelar
-                </ion-button>
-                <ion-button type="submit" color="success" style="width: 45%; height:100%; padding-right: 5px;" class="ion-float-right">
-                    Guardar
-                </ion-button>
+            <div class="div-Footer row" style="width: 100%; padding-bottom: 15px;">
+                <ion-item style="width: 50%; float:left" class="transparent-background-color" lines="none">
+                    <ion-button (click)="cancelar()" style="width: 100%; height: 75%; float: left;" color="danger">
+                        Cancelar
+                    </ion-button>
+                </ion-item>
+
+                <ion-item style="width: 50%; float:right" class="transparent-background-color" lines="none">
+                    <ion-button type="submit" color="success" style="width: 100%; height: 75%; float: right;">
+                        Guardar
+                    </ion-button>
+                </ion-item>
             </div>
         </form>
     </div>
@@ -101,13 +106,18 @@
                     Palavra-passe é de preenchimento obrigatório
                 </ion-text>
             </div>
-            <div class="div-Footer row" style="width: 100%; height: 45px; padding-bottom: 15px;">
-                <ion-button (click)="cancelar()" style="width: 45%; height:100%; padding-left: 5px;" color="danger">
-                    Cancelar
-                </ion-button>
-                <ion-button type="submit" color="success" style="width: 45%; height:100%; padding-right: 5px;" class="ion-float-right">
-                    Guardar
-                </ion-button>
+            <div class="div-Footer row" style="width: 100%; padding-bottom: 15px;">
+                <ion-item style="width: 50%; float:left" class="transparent-background-color" lines="none">
+                    <ion-button (click)="cancelar()" style="width: 100%; height: 75%; float: left;" color="danger">
+                        Cancelar
+                    </ion-button>
+                </ion-item>
+
+                <ion-item style="width: 50%; float:right" class="transparent-background-color" lines="none">
+                    <ion-button type="submit" color="success" style="width: 100%; height: 75%; float: right;">
+                        Guardar
+                    </ion-button>
+                </ion-item>
             </div>
         </form>
     </div>
@@ -125,17 +135,22 @@
                     Telefone deve estar no formato XXXXXXXXX
                 </ion-text>
             </div>
-            <div class="div-Footer row" style="width: 100%; height: 45px; padding-bottom: 15px;">
-                <ion-button (click)="cancelar()" style="width: 45%; height:100%; padding-left: 5px;" color="danger">
-                    Cancelar
-                </ion-button>
-                <ion-button type="submit" color="success" style="width: 45%; height:100%; padding-right: 5px;" class="ion-float-right">
-                    Guardar
-                </ion-button>
+            <div class="div-Footer row" style="width: 100%; padding-bottom: 15px;">
+                <ion-item style="width: 50%; float:left" class="transparent-background-color" lines="none">
+                    <ion-button (click)="cancelar()" style="width: 100%; height: 75%; float: left;" color="danger">
+                        Cancelar
+                    </ion-button>
+                </ion-item>
+
+                <ion-item style="width: 50%; float:right" class="transparent-background-color" lines="none">
+                    <ion-button type="submit" color="success" style="width: 100%; height: 75%; float: right;">
+                        Guardar
+                    </ion-button>
+                </ion-item>
             </div>
         </form>
     </div>
-    <div class="div-Footer row" style="width: 100%; padding-bottom: 15px;">
+    <div class="div-Footer row" style="width: 100%; padding-bottom: 15px;" *ngIf="selecionado()">
         <ion-item style="width: 50%; float:left" class="transparent-background-color" lines="none">
             <ion-button (click)="cancelar()" style="width: 100%; height: 75%; float: left;" color="danger">
                 Cancelar
