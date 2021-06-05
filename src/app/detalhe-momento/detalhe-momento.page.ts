@@ -1,4 +1,5 @@
 import { Component, OnInit, ViewChild } from '@angular/core';
+import { Router } from '@angular/router';
 import { ModalController, NavController } from '@ionic/angular';
 import { Subject } from 'rxjs';
 import { TabsComponent } from '../components/tabs/tabs.component';
@@ -15,8 +16,13 @@ import { ModalPartilhaPage } from '../modal-partilha/modal-partilha.page';
 })
 export class DetalheMomentoPage implements OnInit {
 
+  public image: string;
 
-  constructor(public modalController: ModalController, public ctrl: NavController,) { }
+  constructor(public modalController: ModalController, public ctrl: NavController, private router: Router) { 
+    if (this.router.getCurrentNavigation().extras.state) {
+      this.image = this.router.getCurrentNavigation().extras.state.imageSrc;
+    }
+  }
 
   ngOnInit() {
   }

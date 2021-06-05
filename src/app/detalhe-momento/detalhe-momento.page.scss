@@ -1,0 +1,16 @@
+img{
+    display: block;
+    max-width: max-content;
+    max-height: max-content;
+    margin-left: auto;
+    margin-right: auto;
+    object-fit: scale-down;
+}
+
+div{
+    display: flex;
+    flex-direction: row;
+    align-content: center;
+    align-items: center;
+    min-height: 80vh;
+}

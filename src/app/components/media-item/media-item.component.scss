@@ -1,5 +1,5 @@
 img{
-    height: 4em;
+    height: 10vh;
     width: 100%;
     
     object-fit: cover;
@@ -10,8 +10,10 @@ img{
 }
 
 ion-card{
-    max-width: 6.5em;
-    max-height: 19em;
+    max-width: 33vw;
+    min-width: 26vw;
+    max-height: 20vh;
+    min-height: 15vh;
 }
 
 ion-card-content{
