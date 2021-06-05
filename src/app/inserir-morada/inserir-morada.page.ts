@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { NavController, ToastController } from '@ionic/angular';
 import { Validators, FormBuilder, FormGroup } from '@angular/forms';
+import { Router, NavigationExtras } from '@angular/router';
 @Component({
   selector: 'app-inserir-morada',
   templateUrl: './inserir-morada.page.html',
@@ -10,7 +11,7 @@ export class InserirMoradaPage implements OnInit {
   moradaForm: FormGroup;
   isSubmitted: boolean;
 
-  constructor(public ctrl: NavController, public formBuilder: FormBuilder, public toastController:ToastController) { 
+  constructor(public ctrl: NavController, public formBuilder: FormBuilder, public toastController:ToastController, private router: Router) { 
     this.isSubmitted = false;
   }
   ngOnInit() {
@@ -29,7 +30,7 @@ export class InserirMoradaPage implements OnInit {
     this.ctrl.pop();
   }
   guardar(){
-    this.addressInsertedToast();
+    
     this.ctrl.pop();
   }
 
@@ -47,7 +48,16 @@ export class InserirMoradaPage implements OnInit {
       //console.log(this.moradaForm.value);
       return false;
     } else {
-      this.guardar();
+      let navigationExtras: NavigationExtras;
+        navigationExtras = {
+          state: {
+            "pagina": "Morada",
+            dadosM: this.moradaForm.value
+          }
+        };
+        console.log(navigationExtras);
+        this.addressInsertedToast();
+        this.router.navigate(['dados-encomenda'], navigationExtras);
       //console.log(this.moradaForm.value);
     }
   }
