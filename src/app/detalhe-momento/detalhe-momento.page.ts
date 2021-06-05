@@ -17,10 +17,22 @@ import { ModalPartilhaPage } from '../modal-partilha/modal-partilha.page';
 export class DetalheMomentoPage implements OnInit {
 
   public image: string;
+  public description: string;
+  public date: string;
+  public details: string;
+  public time: string;
+  public title: string;
+  public tags: string[];
 
-  constructor(public modalController: ModalController, public ctrl: NavController, private router: Router) { 
+  constructor(public modalController: ModalController, public ctrl: NavController, private router: Router) {
     if (this.router.getCurrentNavigation().extras.state) {
       this.image = this.router.getCurrentNavigation().extras.state.imageSrc;
+      this.description = this.router.getCurrentNavigation().extras.state.descricao;
+      this.date = this.router.getCurrentNavigation().extras.state.data;
+      this.details = this.router.getCurrentNavigation().extras.state.detalhes;
+      this.time = this.router.getCurrentNavigation().extras.state.time;
+      this.title = this.router.getCurrentNavigation().extras.state.titulo;
+      this.tags = this.router.getCurrentNavigation().extras.state.tags.split(',');
     }
   }
 
@@ -42,7 +54,15 @@ export class DetalheMomentoPage implements OnInit {
   async presentModalDetalhesMomento() {
     const modal = await this.modalController.create({
       component: ModalDetalheMomentoPage,
-      cssClass: "my-detal-moment-modal-css"
+      cssClass: "my-detal-moment-modal-css",
+      componentProps: {
+        description: this.description,
+        date: this.date,
+        details: this.details,
+        time: this.time,
+        title: this.title,
+        tags: this.tags
+      }
     });
     return await modal.present();
   }

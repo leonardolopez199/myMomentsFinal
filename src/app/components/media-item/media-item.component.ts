@@ -24,12 +24,18 @@ export class MediaItemComponent implements OnInit {
   @Input('image') image: string;
   @Input('place') place: string;
   @Input('time') time: string;
-  @Input('sliceStart') sliceStart: string;
-  @Input('sliceEnd') sliceEnd: string;
+  @Input('fotos') fotos: string;
+  @Input('titulo') titulo: string;
+  @Input('data') data: string;
+  @Input('descricao') descricao: string;
+  @Input('detalhes') detalhes: string;
+  @Input('tags') tags: string;
+
   public id: number;
   private checkbox: any;
   public checkExist: any;
   public gamby: any;
+  public self: any;
 
   constructor(private navRoot: NavController, private router: Router) {
     this.longPressActive = false;
@@ -112,8 +118,12 @@ export class MediaItemComponent implements OnInit {
           albumName: this.place,
           imageSrc: this.image,
           time: this.time,
-          sliceStart: this.sliceStart,
-          sliceEnd: this.sliceEnd
+          fotos: this.fotos,
+          titulo: this.titulo,
+          data: this.data,
+          descricao: this.descricao,
+          detalhes: this.detalhes,
+          tags: this.tags
         }
       };
       this.router.navigate([this.route], navigationExtras);

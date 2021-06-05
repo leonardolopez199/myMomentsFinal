@@ -48,6 +48,8 @@ export class PaginaInicialPage implements OnInit, AfterViewInit {
     this.mediaItems.changes.subscribe(() => {
       this.cardArray = this.mediaItems.toArray();
 
+
+
       this.subjectDelete = new Subject();
       this.toolbarVisibleStatus = document.getElementById("tabP");
 
@@ -94,12 +96,15 @@ export class PaginaInicialPage implements OnInit, AfterViewInit {
 
   async ngOnInit() {
     let response = await fetch('./assets/data/albuns.json');
-    this.medias = await response.json();
-    this.albuns.push(this.medias[0]);
-    this.albuns.push(this.medias[2]);
-    this.albuns.push(this.medias[7]);
-    this.albuns.push(this.medias[9]);
-    this.albuns.push(this.medias[15]);
+    this.albuns = await response.json();
+    this.albuns.forEach(iten => {
+      iten.fotos = JSON.stringify(iten.fotos);
+    });
+    // this.albuns.push(this.medias[0]);
+    // this.albuns.push(this.medias[2]);
+    // this.albuns.push(this.medias[7]);
+    // this.albuns.push(this.medias[9]);
+    // this.albuns.push(this.medias[15]);
   }
 
 

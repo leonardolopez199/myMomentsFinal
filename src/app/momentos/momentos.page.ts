@@ -26,7 +26,7 @@ export class MomentosPage implements OnInit {
   public albumName: string;
   public sliceStart: number;
   public sliceEnd: number;
-
+  public pictures: any[] = [];
   public albuns: any[] = [];
 
 
@@ -37,110 +37,13 @@ export class MomentosPage implements OnInit {
       this.albumName = this.router.getCurrentNavigation().extras.state.albumName;
       this.sliceStart = this.router.getCurrentNavigation().extras.state.sliceStart;
       this.sliceEnd = this.router.getCurrentNavigation().extras.state.sliceEnd;
+      this.albuns = JSON.parse(this.router.getCurrentNavigation().extras.state.fotos);
     }
 
   }
 
   ngOnInit() {
-    this.albuns =
-      [
-        {
-          "hora": "07:54",
-          "localizacao": "Viana",
-          "src": "../../assets/img/albuns/01.jpg",
-          "fotos": {}
-        },
-        {
-          "hora": "18:36",
-          "localizacao": "Braga",
-          "src": "../../assets/img/albuns/02.jpg",
-          "fotos": {}
-        },
-        {
-          "hora": "09:37",
-          "localizacao": "Aveiro",
-          "src": "../../assets/img/albuns/03.jpg",
-          "fotos": {}
-        },
-        {
-          "hora": "15:20",
-          "localizacao": "Faro",
-          "src": "../../assets/img/albuns/04.jpg",
-          "fotos": {}
-        },
-        {
-          "hora": "05:13",
-          "localizacao": "Porto",
-          "src": "../../assets/img/albuns/05.jpg",
-          "fotos": {}
-        },
-        {
-          "hora": "11:48",
-          "localizacao": "Lousã",
-          "src": "../../assets/img/albuns/06.jpg",
-          "fotos": {}
-        },
-        {
-          "hora": "13:56",
-          "localizacao": "Sobral",
-          "src": "../../assets/img/albuns/07.jpg",
-          "fotos": {}
-        },
-        {
-          "hora": "06:05",
-          "localizacao": "Oiã",
-          "src": "../../assets/img/albuns/08.jpg",
-          "fotos": {}
-        },
-        {
-          "hora": "19:18",
-          "localizacao": "Rego",
-          "src": "../../assets/img/albuns/09.jpg",
-          "fotos": {}
-        },
-        {
-          "hora": "22:00",
-          "localizacao": "Sosa",
-          "src": "../../assets/img/albuns/10.jpg",
-          "fotos": {}
-        },
-        {
-          "hora": "21:08",
-          "localizacao": "Ouca",
-          "src": "../../assets/img/albuns/11.jpg",
-          "fotos": {}
-        },
-        {
-          "hora": "23:55",
-          "localizacao": "Ereira",
-          "src": "../../assets/img/albuns/12.jpg",
-          "fotos": {}
-        },
-        {
-          "hora": "14:41",
-          "localizacao": "Évora",
-          "src": "../../assets/img/albuns/13.jpg",
-          "fotos": {}
-        },
-        {
-          "hora": "17:49",
-          "localizacao": "Lisboa",
-          "src": "../../assets/img/albuns/14.jpg",
-          "fotos": {}
-        },
-        {
-          "hora": "20:55",
-          "localizacao": "Pombal",
-          "src": "../../assets/img/albuns/15.jpg",
-          "fotos": {}
-        },
-        {
-          "hora": "07:52",
-          "localizacao": "Moita",
-          "src": "../../assets/img/albuns/16.jpg",
-          "fotos": {}
-        }
-      ];
+
 
   }
 
@@ -154,7 +57,6 @@ export class MomentosPage implements OnInit {
 
   ngAfterViewInit(): void {
     this.cardArray = this.mediaItems.toArray();
-    console.log(this.cardArray);
     this.subjectDelete = new Subject();
     this.toolbarVisibleStatus = document.getElementById("tab");
 
@@ -175,6 +77,8 @@ export class MomentosPage implements OnInit {
       this.tabBar.getSubjectDeleteAction().subscribe(deleteAction => {
         if (deleteAction) {
           this.selectModeService.removeSelected(this.cardArray);
+          if (this.getTotalActive() == 0)
+            this.navRoot.navigateForward("pagina-inicial");
         }
       });
     });
@@ -214,6 +118,10 @@ export class MomentosPage implements OnInit {
     this.selectModeService.disableSelectMode(this.cardArray);
     this.toolbarVisibleStatus.setAttribute("hidden", true);
     this.setSelectMode(false);
+  }
+
+  private getTotalActive(): number {
+    return this.cardArray.filter(iten => iten.isActive()).length;
   }
 
   public setSelectMode(status: boolean) {

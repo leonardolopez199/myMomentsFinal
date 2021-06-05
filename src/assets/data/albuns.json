@@ -3,96 +3,316 @@
         "hora": "07:54",
         "localizacao": "Viana",
         "src": "../../assets/img/albuns/01.jpg",
-        "fotos": {}
+        "fotos": [
+            {
+                "titulo": "a",
+                "hora": "07:54",
+                "data": "2021-06-15",
+                "descricao": "Festa animada.",
+                "detalhes": "0.8MP 1440x720 3.4MB",
+                "tags": [
+                    "festa",
+                    "DCB"
+                ],
+                "src": "../../assets/img/albuns/f01.jpg"
+            },
+            {
+                "titulo": "b",
+                "hora": "07:54",
+                "data": "2021-02-31",
+                "descricao": "Festa animada.",
+                "detalhes": "0.8MP 1440x720 3.4MB",
+                "tags": [
+                    "festa",
+                    "DCB"
+                ],
+                "src": "../../assets/img/albuns/f02.jpg"
+            }
+        ]
     },
     {
         "hora": "18:36",
         "localizacao": "Braga",
         "src": "../../assets/img/albuns/02.jpg",
-        "fotos": {}
+        "fotos": [
+            {
+                "titulo": "",
+                "hora": "07:54",
+                "data": "06/07/2021",
+                "descricao": "Festa animada.",
+                "detalhes": "0.8MP 1440x720 3.4MB",
+                "tags": [
+                    "festa",
+                    "DCB"
+                ],
+                "src": "../../assets/img/albuns/f01.jpg"
+            }
+        ]
     },
     {
         "hora": "09:37",
         "localizacao": "Aveiro",
         "src": "../../assets/img/albuns/03.jpg",
-        "fotos": {}
+        "fotos": [
+            {
+                "titulo": "",
+                "hora": "07:54",
+                "data": "06/07/2021",
+                "descricao": "Festa animada.",
+                "detalhes": "0.8MP 1440x720 3.4MB",
+                "tags": [
+                    "festa",
+                    "DCB"
+                ],
+                "src": "../../assets/img/albuns/f01.jpg"
+            }
+        ]
     },
     {
         "hora": "15:20",
         "localizacao": "Faro",
         "src": "../../assets/img/albuns/04.jpg",
-        "fotos": {}
+        "fotos": [
+            {
+                "titulo": "",
+                "hora": "07:54",
+                "data": "06/07/2021",
+                "descricao": "Festa animada.",
+                "detalhes": "0.8MP 1440x720 3.4MB",
+                "tags": [
+                    "festa",
+                    "DCB"
+                ],
+                "src": "../../assets/img/albuns/f01.jpg"
+            }
+        ]
     },
     {
         "hora": "05:13",
         "localizacao": "Porto",
         "src": "../../assets/img/albuns/05.jpg",
-        "fotos": {}
+        "fotos": [
+            {
+                "titulo": "",
+                "hora": "07:54",
+                "data": "06/07/2021",
+                "descricao": "Festa animada.",
+                "detalhes": "0.8MP 1440x720 3.4MB",
+                "tags": [
+                    "festa",
+                    "DCB"
+                ],
+                "src": "../../assets/img/albuns/f01.jpg"
+            }
+        ]
     },
     {
         "hora": "11:48",
         "localizacao": "Lousã",
         "src": "../../assets/img/albuns/06.jpg",
-        "fotos": {}
+        "fotos": [
+            {
+                "titulo": "",
+                "hora": "07:54",
+                "data": "06/07/2021",
+                "descricao": "Festa animada.",
+                "detalhes": "0.8MP 1440x720 3.4MB",
+                "tags": [
+                    "festa",
+                    "DCB"
+                ],
+                "src": "../../assets/img/albuns/f01.jpg"
+            }
+        ]
     },
     {
         "hora": "13:56",
         "localizacao": "Sobral",
         "src": "../../assets/img/albuns/07.jpg",
-        "fotos": {}
+        "fotos": [
+            {
+                "titulo": "",
+                "hora": "07:54",
+                "data": "06/07/2021",
+                "descricao": "Festa animada.",
+                "detalhes": "0.8MP 1440x720 3.4MB",
+                "tags": [
+                    "festa",
+                    "DCB"
+                ],
+                "src": "../../assets/img/albuns/f01.jpg"
+            }
+        ]
     },
     {
         "hora": "06:05",
         "localizacao": "Oiã",
         "src": "../../assets/img/albuns/08.jpg",
-        "fotos": {}
+        "fotos": [
+            {
+                "titulo": "",
+                "hora": "07:54",
+                "data": "06/07/2021",
+                "descricao": "Festa animada.",
+                "detalhes": "0.8MP 1440x720 3.4MB",
+                "tags": [
+                    "festa",
+                    "DCB"
+                ],
+                "src": "../../assets/img/albuns/f01.jpg"
+            }
+        ]
     },
     {
         "hora": "19:18",
         "localizacao": "Rego",
         "src": "../../assets/img/albuns/09.jpg",
-        "fotos": {}
+        "fotos": [
+            {
+                "titulo": "",
+                "hora": "07:54",
+                "data": "06/07/2021",
+                "descricao": "Festa animada.",
+                "detalhes": "0.8MP 1440x720 3.4MB",
+                "tags": [
+                    "festa",
+                    "DCB"
+                ],
+                "src": "../../assets/img/albuns/f01.jpg"
+            }
+        ]
     },
     {
         "hora": "22:00",
         "localizacao": "Sosa",
         "src": "../../assets/img/albuns/10.jpg",
-        "fotos": {}
+        "fotos": [
+            {
+                "titulo": "",
+                "hora": "07:54",
+                "data": "06/07/2021",
+                "descricao": "Festa animada.",
+                "detalhes": "0.8MP 1440x720 3.4MB",
+                "tags": [
+                    "festa",
+                    "DCB"
+                ],
+                "src": "../../assets/img/albuns/f01.jpg"
+            }
+        ]
     },
     {
         "hora": "21:08",
         "localizacao": "Ouca",
         "src": "../../assets/img/albuns/11.jpg",
-        "fotos": {}
+        "fotos": [
+            {
+                "titulo": "",
+                "hora": "07:54",
+                "data": "06/07/2021",
+                "descricao": "Festa animada.",
+                "detalhes": "0.8MP 1440x720 3.4MB",
+                "tags": [
+                    "festa",
+                    "DCB"
+                ],
+                "src": "../../assets/img/albuns/f01.jpg"
+            }
+        ]
     },
     {
         "hora": "23:55",
         "localizacao": "Ereira",
         "src": "../../assets/img/albuns/12.jpg",
-        "fotos": {}
+        "fotos": [
+            {
+                "titulo": "",
+                "hora": "07:54",
+                "data": "06/07/2021",
+                "descricao": "Festa animada.",
+                "detalhes": "0.8MP 1440x720 3.4MB",
+                "tags": [
+                    "festa",
+                    "DCB"
+                ],
+                "src": "../../assets/img/albuns/f01.jpg"
+            }
+        ]
     },
     {
         "hora": "14:41",
         "localizacao": "Évora",
         "src": "../../assets/img/albuns/13.jpg",
-        "fotos": {}
+        "fotos": [
+            {
+                "titulo": "",
+                "hora": "07:54",
+                "data": "06/07/2021",
+                "descricao": "Festa animada.",
+                "detalhes": "0.8MP 1440x720 3.4MB",
+                "tags": [
+                    "festa",
+                    "DCB"
+                ],
+                "src": "../../assets/img/albuns/f01.jpg"
+            }
+        ]
     },
     {
         "hora": "17:49",
         "localizacao": "Lisboa",
         "src": "../../assets/img/albuns/14.jpg",
-        "fotos": {}
+        "fotos": [
+            {
+                "titulo": "",
+                "hora": "07:54",
+                "data": "06/07/2021",
+                "descricao": "Festa animada.",
+                "detalhes": "0.8MP 1440x720 3.4MB",
+                "tags": [
+                    "festa",
+                    "DCB"
+                ],
+                "src": "../../assets/img/albuns/f01.jpg"
+            }
+        ]
     },
     {
         "hora": "20:55",
         "localizacao": "Pombal",
         "src": "../../assets/img/albuns/15.jpg",
-        "fotos": {}
+        "fotos": [
+            {
+                "titulo": "",
+                "hora": "07:54",
+                "data": "06/07/2021",
+                "descricao": "Festa animada.",
+                "detalhes": "0.8MP 1440x720 3.4MB",
+                "tags": [
+                    "festa",
+                    "DCB"
+                ],
+                "src": "../../assets/img/albuns/f01.jpg"
+            }
+        ]
     },
     {
         "hora": "07:52",
         "localizacao": "Moita",
         "src": "../../assets/img/albuns/16.jpg",
-        "fotos": {}
+        "fotos": [
+            {
+                "titulo": "",
+                "hora": "07:54",
+                "data": "06/07/2021",
+                "descricao": "Festa animada.",
+                "detalhes": "0.8MP 1440x720 3.4MB",
+                "tags": [
+                    "festa",
+                    "DCB"
+                ],
+                "src": "../../assets/img/albuns/f01.jpg"
+            }
+        ]
     }
 ]

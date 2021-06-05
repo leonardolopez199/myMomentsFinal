@@ -1,11 +1,13 @@
 <ion-content>
     <div class="row" style="margin-top: 10%;" class="padding5">
         <label>Titulo</label>
-        <ion-input value="Sem Titulo" style="background-color: white; border-radius: 5px;" class="datetimeColor"></ion-input>
+        <ion-input value="{{this.title}}" style="background-color: white; border-radius: 5px;" class="datetimeColor">
+        </ion-input>
     </div>
     <div class="row" class="padding5">
         <label>Data</label>
-        <ion-datetime displayFormat="DD / MM / YYYY" value="2021-03-31" class="datetimeColor" style="background-color: white; border-radius: 5px;"></ion-datetime>
+        <ion-datetime displayFormat="DD / MM / YYYY" value="{{this.date}}" class="datetimeColor"
+            style="background-color: white; border-radius: 5px;"></ion-datetime>
 
     </div>
     <div class="row" class="padding5">
@@ -28,10 +30,12 @@
     </div>
     <div class="row" class="padding5">
         <label>Descrição</label><br />
-        <textarea style="border-radius: 5px; width: 100%;"></textarea>
+        <textarea style="border-radius: 5px; width: 100%;">
+            {{this.description}}
+        </textarea>
     </div>
     <div class="row" class="padding5">
         <label>Detalhes</label><br>
-        <label class="datetimeColor">0.8MP  1440x720   2.5MB</label>
+        <label class="datetimeColor">{{this.details}}</label>
     </div>
 </ion-content>
