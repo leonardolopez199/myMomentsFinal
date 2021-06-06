@@ -6,7 +6,6 @@ import { IonicModule } from '@ionic/angular';
 import { InserirPagamentoPageRoutingModule } from './inserir-pagamento-routing.module';
 
 import { InserirPagamentoPage } from './inserir-pagamento.page';
-import {BrMaskerModule} from 'br-mask';
 
 @NgModule({
   imports: [
@@ -14,8 +13,7 @@ import {BrMaskerModule} from 'br-mask';
     FormsModule,
     IonicModule,
     ReactiveFormsModule,
-    InserirPagamentoPageRoutingModule,
-    BrMaskerModule
+    InserirPagamentoPageRoutingModule
   ],
   declarations: [InserirPagamentoPage]
 })

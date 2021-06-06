@@ -12,11 +12,10 @@ import { ScreenOrientation } from '@ionic-native/screen-orientation/ngx';
 import { HttpClientModule } from '@angular/common/http';
 import { FormsModule } from '@angular/forms';
 
-
 @NgModule({
   declarations: [AppComponent],
   entryComponents: [],
-  imports: [ BrowserModule, IonicModule.forRoot(), AppRoutingModule, HttpClientModule, FormsModule],
+  imports: [BrowserModule, IonicModule.forRoot(), AppRoutingModule, HttpClientModule, FormsModule],
   providers: [{ provide: RouteReuseStrategy, useClass: IonicRouteStrategy }, ScreenOrientation],
   bootstrap: [AppComponent],
 })

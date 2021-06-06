@@ -21,8 +21,6 @@ export class InserirPagamentoPage implements OnInit {
 
   mbWayForm: FormGroup;
   isSubmittedmbWay: boolean;
-
-  public minDate: string;
   constructor(public ctrl: NavController, public toastController: ToastController, public formBuilder: FormBuilder, private router: Router) {
     this.isSubmittedCartao = false;
     this.isSubmittedPaypal = false;
@@ -40,21 +38,8 @@ export class InserirPagamentoPage implements OnInit {
       senha: ['', [Validators.required]]
     });
     this.mbWayForm = this.formBuilder.group({
-      telefone: ['', [Validators.required, Validators.pattern('^[0-9]{3} [0-9]{3} [0-9]{3}')]]
+      telefone: ['', [Validators.required, Validators.pattern('^[0-9]{9}')]]
     });
-
-    var d = new Date(),
-        month = '' + (d.getMonth() + 1),
-        day = '' + d.getDate(),
-        year = d.getFullYear();
-
-    if (month.length < 2) 
-        month = '0' + month;
-    if (day.length < 2) 
-        day = '0' + day;
-
-    this.minDate = [year, month, day].join('-');
-    console.log(this.minDate);
   }
 
   onSelectChange(event) {

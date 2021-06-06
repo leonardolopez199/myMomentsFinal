@@ -6,7 +6,6 @@ import { IonicModule } from '@ionic/angular';
 import { InserirMoradaPageRoutingModule } from './inserir-morada-routing.module';
 
 import { InserirMoradaPage } from './inserir-morada.page';
-import {BrMaskerModule} from 'br-mask';
 
 @NgModule({
   imports: [
@@ -14,8 +13,7 @@ import {BrMaskerModule} from 'br-mask';
     FormsModule,
     IonicModule,
     ReactiveFormsModule,
-    InserirMoradaPageRoutingModule,
-    BrMaskerModule
+    InserirMoradaPageRoutingModule
   ],
   declarations: [InserirMoradaPage]
 })
