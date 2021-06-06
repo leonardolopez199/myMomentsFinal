@@ -1,6 +1,5 @@
 img{
     display: block;
-   
     margin-left: auto;
     margin-right: auto;
     object-fit: contain;
@@ -12,4 +11,18 @@ div{
     align-content: center;
     align-items: center;
     min-height: 80vh;
+}
+
+.video{
+    display: flex;
+    flex-direction: row;
+    align-content: center;
+    align-items: center;
+    min-height: 80vh;
+}
+video{
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    object-fit:contain;
 }
