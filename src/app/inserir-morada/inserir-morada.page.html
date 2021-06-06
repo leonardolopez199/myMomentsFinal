@@ -43,11 +43,11 @@
                     <ion-col style="padding-left: 0px;">
                         <ion-row>
                             <ion-item style="float:left">
-                                <ion-label position="floating">Codigo postal</ion-label>
-                                <ion-input type="text" formControlName="codPostal"></ion-input>
+                                <ion-label position="floating">Codigo postal</ion-label>                                
+                                <ion-input type="text" formControlName="codPostal" [brmasker]="{mask:'0000-000', len:8}"></ion-input>
                             </ion-item>
                         </ion-row>
-                        <ion-row>
+                        <ion-row>   
                             <ion-text class="ion-padding" color="danger" *ngIf="isSubmitted && formControls.codPostal.errors?.required" style="font-size: 12px; padding-bottom: 0px;">
                                 Código postal é de preenchimento obrigatório
                             </ion-text>
@@ -96,13 +96,13 @@
             <!------------------------------------------------------------------------------------------------->
             <ion-item style="padding-top: 15px;">
                 <ion-label position="floating">Número de telefone</ion-label>
-                <ion-input type="number" maxlength="9" formControlName="telefone"></ion-input>
+                <ion-input type="phone" formControlName="telefone" [brmasker]="{mask:'000 000 000', len:11}"></ion-input>
             </ion-item>
             <ion-text class="ion-padding" color="danger" *ngIf="isSubmitted && formControls.telefone.errors?.required" style="font-size: 12px;">
                 Telefone é de preenchimento obrigatório
             </ion-text>
             <ion-text class="ion-padding" color="danger" *ngIf="isSubmitted && formControls.telefone.errors?.pattern" style="font-size: 12px;">
-                Telefone deve estar no formato XXXXXXXXX
+                Telefone deve estar no formato XXX XXX XXX
             </ion-text>
             <!------------------------------------------------------------------------------------------------->
             <!--   <ion-item style="padding-top: 15px;">

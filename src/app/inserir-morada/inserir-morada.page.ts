@@ -21,7 +21,7 @@ export class InserirMoradaPage implements OnInit {
       codPostal: ['', [Validators.required, Validators.pattern('^[0-9]{4}-[0-9]{3}')]],
       cidade: ['', [Validators.required,Validators.pattern('^[a-zA-Z]+$')]],
       nome: ['', [Validators.required, , Validators.minLength(1)]],
-      telefone: ['', [Validators.required, Validators.pattern('^[0-9]{9}')]]/*,
+      telefone: ['', [Validators.required, Validators.pattern('^[0-9]{3} [0-9]{3} [0-9]{3}')]]/*,
       contribuinte: ['', [Validators.required, Validators.pattern('^[0-9]{9}')]]*/
    });
   }
