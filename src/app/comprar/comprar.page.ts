@@ -42,7 +42,10 @@ export class ComprarPage implements OnInit {
       this.cardArray.forEach(item => {
         item.getStatus().subscribe(selectMode => {
           this.selectModeService.enableSelectMode(this.cardArray);
-          this.selectMode = true;
+          if (selectMode) {
+            this.selectMode = true;
+
+          }
         }
         );
         item.getCounterStatus().subscribe(counterStatus => {
