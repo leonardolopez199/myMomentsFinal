@@ -1,41 +1,40 @@
 <ion-content>
-    <div class="row" style="margin-top: 10%;" class="padding5">
-        <label>Titulo</label>
-        <ion-input value="{{this.title}}" style="background-color: white; border-radius: 5px;" class="datetimeColor">
-        </ion-input>
-    </div>
-    <div class="row" class="padding5">
-        <label>Data</label>
-        <ion-datetime displayFormat="DD / MM / YYYY" value="{{this.date}}" class="datetimeColor"
-            style="background-color: white; border-radius: 5px;"></ion-datetime>
+  <div class="row" style="margin-top: 10%;" class="padding5">
+    <label>Titulo</label>
+    <ion-input value="{{this.title}}" style="background-color: white; border-radius: 5px;" class="datetimeColor">
+    </ion-input>
+  </div>
+  <div class="row" class="padding5">
+    <label>Data</label>
+    <ion-datetime displayFormat="DD / MM / YYYY" value="{{this.date}}" class="datetimeColor"
+      style="background-color: white; border-radius: 5px;"></ion-datetime>
 
-    </div>
-    <div class="row" class="padding5">
-        <label>Tags</label>
-        <ion-chip>
-            <ion-icon name="pizza-outline" color="primary"></ion-icon>
-            <ion-label>Furduncinho</ion-label>
+  </div>
+  <div class="row" class="padding5">
+    <label>Tags</label>
+    <ion-grid fixed>
+      <ion-row>
+        <ion-col size="12">
+          <ion-chip *ngFor="let tag of tags">
+            <ion-icon name="pricetag-outline" color="primary"></ion-icon>
+            <ion-label>{{tag}}</ion-label>
             <ion-icon name="close-circle"></ion-icon>
-        </ion-chip>
+          </ion-chip>
+        </ion-col>        
+      </ion-row>
+    </ion-grid>
 
-        <ion-chip>
-            <ion-icon name="beer-outline" color="primary"></ion-icon>
-            <ion-label>Atesentorta</ion-label>
-            <ion-icon name="close-circle"></ion-icon>
-        </ion-chip>
 
-        <ion-chip>
-            <ion-icon name="add" style="margin:0;"></ion-icon>
-        </ion-chip>
-    </div>
-    <div class="row" class="padding5">
-        <label>Descrição</label><br />
-        <textarea style="border-radius: 5px; width: 100%;">
-            {{this.description}}
+  </div>
+
+  <div class="row" class="padding5">
+    <label>Descrição</label><br />
+    <textarea style="border-radius: 5px; width: 100%;" value=" {{this.description}}">
+
         </textarea>
-    </div>
-    <div class="row" class="padding5">
-        <label>Detalhes</label><br>
-        <label class="datetimeColor">{{this.details}}</label>
-    </div>
+  </div>
+  <div class="row" class="padding5">
+    <label>Detalhes</label><br>
+    <label class="datetimeColor">{{this.details}}</label>
+  </div>
 </ion-content>

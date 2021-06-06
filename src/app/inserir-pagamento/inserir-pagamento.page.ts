@@ -54,7 +54,6 @@ export class InserirPagamentoPage implements OnInit {
         day = '0' + day;
 
     this.minDate = [year, month, day].join('-');
-    console.log(this.minDate);
   }
 
   onSelectChange(event) {

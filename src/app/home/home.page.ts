@@ -22,7 +22,7 @@ export class HomePage {
     this.senha = "";
     this.clearAllRadio();
     if (this.platform.is('android'))
-      this.screenOrientation.lock(this.screenOrientation.ORIENTATIONS.PORTRAIT_SECONDARY);
+      this.screenOrientation.lock(this.screenOrientation.ORIENTATIONS.PORTRAIT_PRIMARY);
   }
 
 

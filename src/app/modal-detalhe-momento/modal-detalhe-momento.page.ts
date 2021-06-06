@@ -19,7 +19,7 @@ export class ModalDetalheMomentoPage implements OnInit {
   }
 
   ngOnInit() {
-    this.description = this.navParan.data.descricao;
+    this.description = this.navParan.data.description;
     this.date = this.navParan.data.date;
     this.details = this.navParan.data.details;
     this.time = this.navParan.data.time;
