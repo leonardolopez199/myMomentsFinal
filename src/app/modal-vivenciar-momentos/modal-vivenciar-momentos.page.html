@@ -2,10 +2,10 @@
 <ion-content>
   <div *ngIf="mostra1" class="ion-margin">
     <ion-row>
-      <ion-title class="ion-padding ion-text-center">Vivenciar momentos</ion-title>
+      <ion-title class="ion-padding ion-text-center">Vivenciar Momentos</ion-title>
     </ion-row>
     <ion-row>
-      <ion-label class="ion-padding ion-text-center">Qual o tipo de momento que pretende registar?</ion-label>
+      <ion-title class="ion-padding ion-text-center" style="font-size: 16px;">Qual a forma de registo pretendida?</ion-title>
     </ion-row>
     <ion-list class="ion-padding" style="background-color: transparent; padding-bottom: 3px;">
       <ion-radio-group id="momento" value="foto" (ionChange)="onSelectChange($event)">
@@ -17,33 +17,32 @@
                 <ion-label style="padding-left: 5px;">Fotografia</ion-label>
               </ion-item>
             </ion-col>
-            </ion-row>            
+          </ion-row>
         </ion-item>
         <ion-item class="item-background-color">
           <ion-row style="width: 100%;">
-            <ion-col>
-              <ion-item lines="none">
+            <ion-col style="width: 30%;">
+              <ion-item lines="none" style="margin:0;">
                 <ion-radio value="video"></ion-radio>
                 <ion-label style="padding-left: 5px;">Video</ion-label>
               </ion-item>
             </ion-col>
-            <ion-col>
+            <ion-col style="width: 70%;">
               <section *ngIf="video" class="item-background-color ion-margin-horizontal">
-                <ion-item class="item-background-color ion-margin-horizontal" lines="none">
-                  <ion-select value="1" interface="popover">
-                    <ion-select-option value="1">00:00</ion-select-option>
-                    <ion-select-option value="2">00:05</ion-select-option>
-                    <ion-select-option value="3">00:10</ion-select-option>
-                    <ion-select-option value="4">00:15</ion-select-option>
-                    <ion-select-option value="5">00:20</ion-select-option>
-                    <ion-select-option value="6">00:25</ion-select-option>
-                    <ion-select-option value="7">00:30</ion-select-option>
-                    <ion-select-option value="8">00:35</ion-select-option>
-                    <ion-select-option value="9">00:40</ion-select-option>
-                    <ion-select-option value="10">00:45</ion-select-option>
-                    <ion-select-option value="11">00:50</ion-select-option>
-                    <ion-select-option value="12">00:55</ion-select-option>
-                    <ion-select-option value="13">01:00</ion-select-option>
+                <ion-item class="item-background-color ion-margin-horizontal" lines="none" style="margin:0%">
+                  <ion-select value="2" interface="popover">
+                    <ion-select-option value="2">5 seg</ion-select-option>
+                    <ion-select-option value="3">10 seg</ion-select-option>
+                    <ion-select-option value="4">15 seg</ion-select-option>
+                    <ion-select-option value="5">20 seg</ion-select-option>
+                    <ion-select-option value="6">25 seg</ion-select-option>
+                    <ion-select-option value="7">30 seg</ion-select-option>
+                    <ion-select-option value="8">35 seg</ion-select-option>
+                    <ion-select-option value="9">40 seg</ion-select-option>
+                    <ion-select-option value="10">45 seg</ion-select-option>
+                    <ion-select-option value="11">50 seg</ion-select-option>
+                    <ion-select-option value="12">55 seg</ion-select-option>
+                    <ion-select-option value="13">1 min</ion-select-option>
                   </ion-select>
                 </ion-item>
               </section>
@@ -55,40 +54,33 @@
 
       </ion-radio-group>
     </ion-list>
-<ion-buttons slot="start">
-    <ion-back-button></ion-back-button>
-</ion-buttons>
-    <ion-grid fixed>
-      <ion-row class="ion-justify-content-center">
-        <ion-col size="auto">
-          <ion-button size="small" (click)="cancelar()">Cancelar</ion-button>
-        </ion-col>
-        <ion-col size="auto">
-          <ion-button size="small" (click)="comecaRegistar()" color="success">Começar</ion-button>
-        </ion-col>
-      </ion-row>
-    </ion-grid>
+    <ion-buttons slot="start">
+      <ion-back-button></ion-back-button>
+    </ion-buttons>
+    <section class="ion-justify-content-center ion-text-center" style="margin-top: 5px;">
+      <ion-button (click)="cancelar()" style="width: 44%;float: left;">Cancelar</ion-button>
+      <ion-button color="success" (click)="comecaRegistar()" style="width: 44%;float: right;">Começar</ion-button>
+    </section>
+
 
   </div>
 
   <div *ngIf="mostra2" class="ion-margin modal-vivenciar-2-css">
     <ion-row>
-      <ion-title class="ion-padding ion-text-center">Vivenciar momentos</ion-title>
+      <ion-title class="ion-padding ion-text-center">Vivenciar Momentos</ion-title>
     </ion-row>
     <ion-row>
-      <ion-label class="ion-padding ion-text-center">Posicione o dispositivo virado para o seu grupo de amigos e
-        aproveite o momento!
+      <ion-label class="ion-padding ion-text-center">Posicione o dispositivo em um local com boa visibilidade e vá vivenciar o momento.
       </ion-label>
     </ion-row>
     <ion-row>
-      <ion-label class="ion-padding ion-text-center">Pode deixar que nos tratamos dos momentos.</ion-label>
+      <ion-label class="ion-padding ion-text-center">Pode deixar que dos registos cuidamos nós.</ion-label>
     </ion-row>
 
-
-    <ion-row class="ion-justify-content-center" style="margin-top:8px;">
-      <ion-col size="auto">
-        <ion-button size="small" (click)="terminarVivenciarMomento()">Terminar</ion-button>
-      </ion-col>
+    <ion-row class="ion-padding ion-justify-content-center">
+      <ion-button (click)="terminarVivenciarMomento()" style="width: 44%;float: left;">Vivenciar</ion-button>
     </ion-row>
+
+    
   </div>
 </ion-content>
