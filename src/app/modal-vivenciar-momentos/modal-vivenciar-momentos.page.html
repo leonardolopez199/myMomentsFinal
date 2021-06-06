@@ -1,61 +1,94 @@
 <!--{{conteudoModal}}-->
 <ion-content>
-    <div *ngIf="mostra1" class="ion-margin">
-        <ion-row>
-            <ion-title class="ion-padding">Vivenciar momentos</ion-title></ion-row>
-        <ion-row>
-            <ion-label class="ion-padding ion-text-center">Qual o tipo de momento que pretende registar?</ion-label>
-        </ion-row>        
-        <ion-list class="ion-padding" style="background-color: transparent; padding-bottom: 3px;">
-            <ion-radio-group id="momento" value="foto" (ionChange)="onSelectChange($event)">
-                <ion-item class="item-background-color">
-                    <ion-radio value="foto"></ion-radio>
-                    <ion-label style="padding-left: 5px;">Fotografia</ion-label>
-                </ion-item>
-                <ion-item lines="none" class="item-background-color">
-                    <ion-radio value="video"></ion-radio>
-                    <ion-label style="padding-left: 5px;">Video</ion-label>
-                </ion-item>
-
-            </ion-radio-group>
-        </ion-list>
-        <section *ngIf="video" class="item-background-color ion-margin-horizontal">
-            <ion-item class="item-background-color ion-margin-horizontal">
-                <ion-label>Tempo de gravação</ion-label>
-                <ion-input placeholder="00:00"></ion-input>
-            </ion-item>
-        </section>
-        <ion-grid fixed>
-            <ion-row class="ion-justify-content-center">
-                <ion-col size="auto">
-                    <ion-button size="small" (click)="cancelar()">Cancelar</ion-button>
-                </ion-col>
-                <ion-col size="auto">
-                    <ion-button size="small" (click)="comecaRegistar()" color="success">Começar</ion-button>
-                </ion-col>
-            </ion-row>
-        </ion-grid>
-
-    </div>
-
-    <div *ngIf="mostra2" class="ion-margin">
-        <ion-row>
-            <ion-title class="ion-padding ">Vivenciar momentos</ion-title>
-        </ion-row>
-        <ion-row>
-            <ion-label class="ion-padding ion-text-center">Posicione o dispositivo virado para o seu grupo de amigos e
-                aproveite o momento!
-            </ion-label>
-        </ion-row>
-        <ion-row>
-            <ion-label class="ion-padding ion-text-center">Pode deixar que nos tratamos dos momentos.</ion-label>
-        </ion-row>
-
-
-        <ion-row class="ion-justify-content-center" style="margin-top:8px;">
-            <ion-col size="auto">
-                <ion-button size="small" (click)="terminarVivenciarMomento()">Terminar</ion-button>
+  <div *ngIf="mostra1" class="ion-margin">
+    <ion-row>
+      <ion-title class="ion-padding ion-text-center">Vivenciar momentos</ion-title>
+    </ion-row>
+    <ion-row>
+      <ion-label class="ion-padding ion-text-center">Qual o tipo de momento que pretende registar?</ion-label>
+    </ion-row>
+    <ion-list class="ion-padding" style="background-color: transparent; padding-bottom: 3px;">
+      <ion-radio-group id="momento" value="foto" (ionChange)="onSelectChange($event)">
+        <ion-item class="item-background-color">
+          <ion-row style="width: 100%;">
+            <ion-col>
+              <ion-item lines="none">
+                <ion-radio value="foto"></ion-radio>
+                <ion-label style="padding-left: 5px;">Fotografia</ion-label>
+              </ion-item>
             </ion-col>
-        </ion-row>
-    </div>
+            </ion-row>            
+        </ion-item>
+        <ion-item class="item-background-color">
+          <ion-row style="width: 100%;">
+            <ion-col>
+              <ion-item lines="none">
+                <ion-radio value="video"></ion-radio>
+                <ion-label style="padding-left: 5px;">Video</ion-label>
+              </ion-item>
+            </ion-col>
+            <ion-col>
+              <section *ngIf="video" class="item-background-color ion-margin-horizontal">
+                <ion-item class="item-background-color ion-margin-horizontal" lines="none">
+                  <ion-select value="1" interface="popover">
+                    <ion-select-option value="1">00:00</ion-select-option>
+                    <ion-select-option value="2">00:05</ion-select-option>
+                    <ion-select-option value="3">00:10</ion-select-option>
+                    <ion-select-option value="4">00:15</ion-select-option>
+                    <ion-select-option value="5">00:20</ion-select-option>
+                    <ion-select-option value="6">00:25</ion-select-option>
+                    <ion-select-option value="7">00:30</ion-select-option>
+                    <ion-select-option value="8">00:35</ion-select-option>
+                    <ion-select-option value="9">00:40</ion-select-option>
+                    <ion-select-option value="10">00:45</ion-select-option>
+                    <ion-select-option value="11">00:50</ion-select-option>
+                    <ion-select-option value="12">00:55</ion-select-option>
+                    <ion-select-option value="13">01:00</ion-select-option>
+                  </ion-select>
+                </ion-item>
+              </section>
+            </ion-col>
+
+          </ion-row>
+
+        </ion-item>
+
+      </ion-radio-group>
+    </ion-list>
+<ion-buttons slot="start">
+    <ion-back-button></ion-back-button>
+</ion-buttons>
+    <ion-grid fixed>
+      <ion-row class="ion-justify-content-center">
+        <ion-col size="auto">
+          <ion-button size="small" (click)="cancelar()">Cancelar</ion-button>
+        </ion-col>
+        <ion-col size="auto">
+          <ion-button size="small" (click)="comecaRegistar()" color="success">Começar</ion-button>
+        </ion-col>
+      </ion-row>
+    </ion-grid>
+
+  </div>
+
+  <div *ngIf="mostra2" class="ion-margin modal-vivenciar-2-css">
+    <ion-row>
+      <ion-title class="ion-padding ion-text-center">Vivenciar momentos</ion-title>
+    </ion-row>
+    <ion-row>
+      <ion-label class="ion-padding ion-text-center">Posicione o dispositivo virado para o seu grupo de amigos e
+        aproveite o momento!
+      </ion-label>
+    </ion-row>
+    <ion-row>
+      <ion-label class="ion-padding ion-text-center">Pode deixar que nos tratamos dos momentos.</ion-label>
+    </ion-row>
+
+
+    <ion-row class="ion-justify-content-center" style="margin-top:8px;">
+      <ion-col size="auto">
+        <ion-button size="small" (click)="terminarVivenciarMomento()">Terminar</ion-button>
+      </ion-col>
+    </ion-row>
+  </div>
 </ion-content>

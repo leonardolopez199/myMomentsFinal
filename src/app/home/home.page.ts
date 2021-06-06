@@ -1,7 +1,8 @@
 import { Component } from '@angular/core';
 import { ScreenOrientation } from '@ionic-native/screen-orientation/ngx';
-import { IonRouterOutlet, NavController, Platform } from '@ionic/angular';
+import { IonRouterOutlet, ModalController, NavController, Platform } from '@ionic/angular';
 import { Plugins } from '@capacitor/core';
+import { ModalVivenciarMomentosPage } from '../modal-vivenciar-momentos/modal-vivenciar-momentos.page';
 const { App } = Plugins;
 
 @Component({
@@ -11,7 +12,7 @@ const { App } = Plugins;
 })
 export class HomePage {
   private senha: string = "";
-  constructor(private screenOrientation: ScreenOrientation, public platform: Platform, public ctrl: NavController, private routerOutlet: IonRouterOutlet) {
+  constructor(private screenOrientation: ScreenOrientation, public platform: Platform, public ctrl: NavController, private routerOutlet: IonRouterOutlet, private modalController:ModalController) {
     this.platform.backButton.subscribeWithPriority(-1, () => {
       App.exitApp();
     });
@@ -95,5 +96,13 @@ export class HomePage {
   public digital(): void {
     this.clearAllRadio();
     this.ctrl.navigateForward('pagina-inicial');
+  }
+
+  async presentModalVivenciar() {
+    const modal = await this.modalController.create({
+      component: ModalVivenciarMomentosPage,
+      cssClass: 'modal-vivenciar-css'
+    });
+    return await modal.present();
   }
 }

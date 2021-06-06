@@ -21,12 +21,14 @@ export class ModalVivenciarMomentosPage implements OnInit {
     const selecionado=event.detail.value;
     if(selecionado == "video"){     
       this.video = true;
-    }else{      
+    }else if(selecionado == "foto"){      
       this.video = false;
     }
   }
 
   public comecaRegistar():void{
+    document.getElementsByTagName('ion-modal')[0].classList.remove("modal-vivenciar-css");
+    document.getElementsByTagName('ion-modal')[0].classList.add("modal-vivenciar-2-css");
     this.mostra1=false;
     this.mostra2=true;
   }
