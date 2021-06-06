@@ -11,7 +11,7 @@
     <div class="ion-padding" style="padding-bottom: 0;">
         <ion-list>
             <ion-item lines="none">
-                <ion-select placeholder="Selecionar metodo de pagamento" (ionChange)="onSelectChange($event)">
+                <ion-select interface="popover" placeholder="Selecionar metodo de pagamento" (ionChange)="onSelectChange($event)">
                     <ion-select-option value="cartao"> Cartão de credito</ion-select-option>
                     <ion-select-option value="paypal">PayPal</ion-select-option>
                     <ion-select-option value="mbway">MBWay</ion-select-option>
@@ -24,7 +24,7 @@
             <div class="ion-padding-2">
                 <ion-item>
                     <ion-label position="floating">Número do cartão</ion-label>
-                    <ion-input formControlName="cartao"></ion-input>
+                    <ion-input formControlName="cartao" [brmasker]="{mask:'0000 0000 0000 0000', len:19}"></ion-input>
                 </ion-item>
                 <ion-text class="ion-padding" color="danger" *ngIf="isSubmittedCartao && cartaoformControls.cartao.errors?.required" style="font-size: 12px;">
                     Número do cartão é de preenchimento obrigatório
@@ -38,7 +38,7 @@
                             <ion-row>
                                 <ion-item style="width: 100%; float:left">
                                     <ion-label position="floating">Validade</ion-label>
-                                    <ion-input formControlName="validade"></ion-input>
+                                <ion-datetime type="date" display-format="MM/YYYY"  min="{{minDate}}" max="2055-12-12" picker-format="MM/YYYY"    formControlName="validade"  [brmasker]="{mask:'00/0000' , len:7}"></ion-datetime>
                                 </ion-item>
                             </ion-row>
                             <ion-row>
@@ -54,7 +54,7 @@
                             <ion-row>
                                 <ion-item style="width: 100%; float:right">
                                     <ion-label position="floating">CVV</ion-label>
-                                    <ion-input formControlName="cvv"></ion-input>
+                                    <ion-input formControlName="cvv" [brmasker]="{mask:'00/0000' , len:3}"></ion-input>
                                 </ion-item>
                             </ion-row>
                             <ion-row>
@@ -91,7 +91,7 @@
                     <ion-label position="floating">Email</ion-label>
                     <ion-input formControlName="email"></ion-input>
                 </ion-item>
-                <ion-text class="ion-padding" color="danger" *ngIf="isSubmittedPaypal && paypalformControls.email.errors?.required" style="font-size: 12px;">
+                <ion-text type="email" class="ion-padding" color="danger" *ngIf="isSubmittedPaypal && paypalformControls.email.errors?.required" style="font-size: 12px;">
                     Email é de preenchimento obrigatório
                 </ion-text>
                 <ion-text class="ion-padding" color="danger" *ngIf="isSubmittedPaypal && paypalformControls.email.errors?.pattern" style="font-size: 12px;">
@@ -126,7 +126,7 @@
             <div class="ion-padding-2">
                 <ion-item>
                     <ion-label position="floating">Número telefone</ion-label>
-                    <ion-input formControlName="telefone"></ion-input>
+                    <ion-input formControlName="telefone" type="phone"  [brmasker]="{mask:'000 000 000', len:11}"></ion-input>
                 </ion-item>
                 <ion-text class="ion-padding" color="danger" *ngIf="isSubmittedmbWay && mbwayformControls.telefone.errors?.required" style="font-size: 12px;">
                     Telefone é de preenchimento obrigatório
