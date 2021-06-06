@@ -1,6 +1,6 @@
 <ion-header>
     <ion-toolbar class="transparent-background-color">
-        <ion-title>Forma de pagamento</ion-title>
+        <ion-title  size="medium">Formas de Pagamento</ion-title>
         <ion-buttons slot="start">
             <ion-back-button></ion-back-button>
         </ion-buttons>
@@ -11,8 +11,8 @@
     <div class="ion-padding" style="padding-bottom: 0;">
         <ion-list>
             <ion-item lines="none">
-                <ion-select interface="popover" placeholder="Selecionar metodo de pagamento" (ionChange)="onSelectChange($event)">
-                    <ion-select-option value="cartao"> Cartão de credito</ion-select-option>
+                <ion-select interface="popover" placeholder="Selecione uma forma de pagamento" (ionChange)="onSelectChange($event)">
+                    <ion-select-option value="cartao"> Cartão de Crédito</ion-select-option>
                     <ion-select-option value="paypal">PayPal</ion-select-option>
                     <ion-select-option value="mbway">MBWay</ion-select-option>
                 </ion-select>
@@ -23,7 +23,7 @@
         <form [formGroup]="cartaoForm" (ngSubmit)="submitForm()" novalidate>
             <div class="ion-padding-2">
                 <ion-item>
-                    <ion-label position="floating">Número do cartão</ion-label>
+                    <ion-label position="floating">Número do Cartão</ion-label>
                     <ion-input formControlName="cartao" [brmasker]="{mask:'0000 0000 0000 0000', len:19}"></ion-input>
                 </ion-item>
                 <ion-text class="ion-padding" color="danger" *ngIf="isSubmittedCartao && cartaoformControls.cartao.errors?.required" style="font-size: 12px;">
@@ -125,7 +125,7 @@
         <form [formGroup]="mbWayForm" (ngSubmit)="submitForm()" novalidate>
             <div class="ion-padding-2">
                 <ion-item>
-                    <ion-label position="floating">Número telefone</ion-label>
+                    <ion-label position="floating">Número de Telefone</ion-label>
                     <ion-input formControlName="telefone" type="phone"  [brmasker]="{mask:'000 000 000', len:11}"></ion-input>
                 </ion-item>
                 <ion-text class="ion-padding" color="danger" *ngIf="isSubmittedmbWay && mbwayformControls.telefone.errors?.required" style="font-size: 12px;">

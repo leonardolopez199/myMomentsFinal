@@ -1,18 +1,18 @@
-import { Component, OnInit } from '@angular/core';
+import { AfterViewInit, Component, OnInit, ViewChild } from '@angular/core';
 import { NavigationExtras, Router } from '@angular/router';
-import { ModalController, NavParams } from '@ionic/angular';
-
+import { IonBackButton, IonSearchbar, ModalController, NavParams } from '@ionic/angular';
 
 @Component({
   selector: 'app-modal-search',
   templateUrl: './modal-search.page.html',
   styleUrls: ['./modal-search.page.scss'],
 })
+
 export class ModalSearchPage implements OnInit {
   private medias: any;
   
   constructor(public modalController: ModalController, private router: Router, private navParam: NavParams) {
-
+  
 
   }
 
@@ -20,13 +20,15 @@ export class ModalSearchPage implements OnInit {
  
   }
 
+  
+
   dismiss() {
     this.modalController.dismiss({
       'dismissed': true
     });
   }
 
-  public search(): void {
+  public search() {
     this.modalController.dismiss({
       'dismissed': true
     }); 
@@ -34,7 +36,7 @@ export class ModalSearchPage implements OnInit {
 
       navigationExtras = {
         state: {
-          albumName: "Jackson Barreto",
+          albumName: "Pesquisa",
           imageSrc: "../../assets/img/albuns/f01.jpg",
           time: "12:22",
           fotos: JSON.stringify([
@@ -71,5 +73,11 @@ export class ModalSearchPage implements OnInit {
         }
       };
       this.router.navigate(['momentos'], navigationExtras);
+  }
+  teste(){
+    alert('asd');
+  }
+  teste2(){
+    alert("111");
   }
 }

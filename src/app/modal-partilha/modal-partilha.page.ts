@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 
 import { HttpClient } from '@angular/common/http';
 import { R3TargetBinder } from '@angular/compiler';
+import { ToastController } from '@ionic/angular';
 
 
 @Component({
@@ -16,7 +17,7 @@ export class ModalPartilhaPage implements OnInit {
   public amigos: any;
 public buttonColor: string = "primary";
 
-  constructor(public http: HttpClient) { }
+  constructor(public http: HttpClient, public toastController:ToastController) { }
 
   ngOnInit() {
     this.searchbar = document.querySelector('ion-searchbar');
@@ -25,8 +26,6 @@ public buttonColor: string = "primary";
     this.http.get('https://randomuser.me/api/?results=15').subscribe(data=>{
       this.amigos=data['results'];      
     })
-
-
   }
 
   handleInput(event) {
@@ -42,5 +41,17 @@ public buttonColor: string = "primary";
 
   partilhaAmiguinho(event) {
     event.target.setAttribute("disabled", true);
+  }
+  criarLink(event) {
+    event.target.setAttribute("disabled", true);
+    this.presentToast();
+  }
+
+  async presentToast() {
+    const toast = await this.toastController.create({
+      message: 'Link copiado para a área de transferência.',
+      duration: 2000
+    });
+    toast.present();
   }
 }
