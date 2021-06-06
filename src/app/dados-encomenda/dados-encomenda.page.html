@@ -1,13 +1,13 @@
 <ion-header>
     <ion-toolbar class="transparent-background-color">
-        <ion-title>Revelar momento</ion-title>
+        <ion-title size="medium">Dados de Entrega e Pagamento</ion-title>
     </ion-toolbar>
 </ion-header>
 
 <ion-content>
     <ion-list class="ion-padding" style="background-color: transparent; height: 45%;">
         <ion-row style="padding-left: 0px;">
-            <ion-title style="font-size: 18px;padding-left: 16px;">Endereço de entrega</ion-title>
+            <ion-title style="font-size: 18px;padding-left: 16px;">Endereços de Entrega</ion-title>
             <ion-button style="float: right; padding-right: 4px; font-weight: bold;" size="small" color="dark" fill="clear" (click)="novaMorada()">
                 <ion-icon style="padding-left:15px;" name="add-outline"></ion-icon>
             </ion-button>
@@ -28,7 +28,7 @@
 
     <ion-list class="ion-padding" style="background-color: transparent;  height: 40%;">
         <ion-row style="padding-left: 0px;">
-            <ion-title style="font-size: 18px;padding-left: 16px;">Forma de pagamento</ion-title>
+            <ion-title style="font-size: 18px;padding-left: 16px;">Formas de Pagamento</ion-title>
             <ion-button style="float: right; padding-right: 4px; font-weight: bold;" size="small" color="dark" fill="clear" (click)="novaFormaPagamento()">
                 <ion-icon style="padding-left:15px;" name="add-outline"></ion-icon>
             </ion-button>
@@ -51,7 +51,7 @@
         </ion-item>
         <ion-item style="width: 50%; float:left" class="transparent-background-color" lines="none">
             <ion-button (click)="nextStep()" style="width: 100%; height:75%; padding-right: 5px;" class="ion-float-right" color="success">
-                Finalizar
+                Comprar
             </ion-button>
         </ion-item>
     </div>

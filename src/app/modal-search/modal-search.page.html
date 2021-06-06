@@ -1,3 +1,11 @@
 <ion-content>
-    <ion-searchbar spellcheck="true" style="border-radius: 25px;" (keyup.enter)="search()"></ion-searchbar>
+    
+    <ion-item>
+        <ion-icon name="search-outline"></ion-icon>
+        <ion-input placeholder="Pesquisar" type="text" style="margin-left: 15px;padding-top: 5px;" 
+        autofocus (keyup.enter)="search()"></ion-input>
+        <ion-button size="small" color="dark" fill="clear" slot="end" (click)="search()">
+            <ion-icon slot="icon-only" name="mic-outline"></ion-icon>
+          </ion-button>
+      </ion-item>
 </ion-content>

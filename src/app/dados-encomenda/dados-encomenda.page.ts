@@ -48,7 +48,8 @@ export class DadosEncomendaPage implements OnInit {
   async nextStep() {
     const modal = await this.modalController.create({
       component: ModalCompraEfetuadaPage,
-      cssClass: 'modal-fim-compra-css'
+      cssClass: 'modal-fim-compra-css',
+      backdropDismiss:false
     });
     return await modal.present();
   }
