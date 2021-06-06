@@ -100,11 +100,6 @@ export class PaginaInicialPage implements OnInit, AfterViewInit {
     this.albuns.forEach(iten => {
       iten.fotos = JSON.stringify(iten.fotos);
     });
-    // this.albuns.push(this.medias[0]);
-    // this.albuns.push(this.medias[2]);
-    // this.albuns.push(this.medias[7]);
-    // this.albuns.push(this.medias[9]);
-    // this.albuns.push(this.medias[15]);
   }
 
 
@@ -160,7 +155,7 @@ export class PaginaInicialPage implements OnInit, AfterViewInit {
     });
     return await modal.present();
 
-    
+
   }
 
   async presentModalNotifica() {

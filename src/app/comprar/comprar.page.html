@@ -1,5 +1,5 @@
 <ion-header>
-    <ion-toolbar *ngIf="!isSelectMode()"  class="transparent-background-color">
+    <ion-toolbar *ngIf="!isSelectMode()" class="transparent-background-color">
         <ion-title>Revelar momentos</ion-title>
         <ion-buttons slot="start">
             <ion-back-button></ion-back-button>
@@ -36,7 +36,8 @@
     <ion-grid fixed>
         <ion-row>
             <ion-col size="12">
-                <app-media-item route="momento-video" image="../../assets/img/imgDef.png" *ngFor="let i of [].constructor(4) ">
+                <app-media-item route="momento-video" srcv={{i.srcv}} fotos={{i.fotos}} image={{i.src}}
+                    image="../../assets/img/imgDef.png" *ngFor="let i of videos">
                 </app-media-item>
             </ion-col>
         </ion-row>
@@ -52,7 +53,7 @@
     <ion-grid fixed>
         <ion-row>
             <ion-col size="12">
-                <app-media-item route="comprar" image="../../assets/img/imgDef.png" *ngFor="let i of [].constructor(6) ">
+                <app-media-item image={{i.src}} *ngFor="let i of fotos">
                 </app-media-item>
             </ion-col>
         </ion-row>

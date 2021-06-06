@@ -130,7 +130,8 @@ export class MediaItemComponent implements OnInit {
           srcv: this.srcv
         }
       };
-      this.router.navigate([this.route], navigationExtras);
+      if (this.route)
+        this.router.navigate([this.route], navigationExtras);
     }
   }
 
