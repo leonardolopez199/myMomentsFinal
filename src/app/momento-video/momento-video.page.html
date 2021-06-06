@@ -1,15 +1,36 @@
 <ion-header>
-    <ion-toolbar>
+    <ion-toolbar *ngIf="!isSelectMode()" class="transparent-background-color">
         <ion-title>Revelar momentos</ion-title>
         <ion-buttons slot="start">
             <ion-back-button></ion-back-button>
         </ion-buttons>
     </ion-toolbar>
-</ion-header>
+    <ion-toolbar *ngIf="isSelectMode()">
+        <ion-button size="small" color="dark" fill="clear" slot="start" (click)="cancelSelect()">
+            <ion-icon slot="icon-only" name="close"></ion-icon>
+        </ion-button>
 
+        <ion-title size="medium"> {{getMsgCounter()}} </ion-title>
+
+        <ion-button size="small" color="dark" fill="clear" slot="end" (click)="selectAll()">
+            <ion-icon slot="icon-only" name="checkmark-done"></ion-icon>
+        </ion-button>
+        <ion-button size="small" color="dark" fill="clear" slot="end" (click)="unSelectAll()">
+            <ion-icon slot="icon-only" name="square-outline"></ion-icon>
+        </ion-button>
+        <ion-button size="small" color="dark" fill="clear" slot="end" (click)="remove()">
+            <ion-icon slot="icon-only" name="trash-outline"></ion-icon>
+        </ion-button>
+    </ion-toolbar>
+
+</ion-header>
 <ion-content>
-    <img src="../../assets/img/imgDef.png" style="width: 100%;" class="ion-padding" />
-    <ion-button expand="block" class="ion-padding" style="padding-bottom: 20px;" (click)="adicionarMomento()">
+
+    <div class="video">
+        <video src="{{srcv}}" autoplay controls></video>
+    </div>
+    <ion-button expand="block" class="ion-padding" *ngIf="!isSelectMode()" style="padding-bottom: 20px;"
+        (click)="adicionarMomento()">
         Adicionar este momentos.
     </ion-button>
     <div i.class="ion-padding">
@@ -20,16 +41,15 @@
         </ion-item-divider>
     </div>
 
-    <div class="row" class="ion-padding">
-        <ion-card *ngFor="let card of cards" style="width: 28%;display: inline-block;">
-            <ion-card-header style="padding:10px;">
-                <ion-card-subtitle class="ion-float-right">00:10</ion-card-subtitle>
-            </ion-card-header>
-            <ion-card-content>
-                <img src="../../assets/img/imgDef.png" style="width: fit-content; height: fit-content;" />
-            </ion-card-content>
-        </ion-card>
-    </div>
+    <ion-grid fixed>
+        <ion-row>
+            <ion-col size="12">
+                <app-media-item image={{i}} *ngFor="let i of cards ">
+                </app-media-item>
+            </ion-col>
+        </ion-row>
+    </ion-grid>
+
 
 
 

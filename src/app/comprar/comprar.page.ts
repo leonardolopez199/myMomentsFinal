@@ -16,35 +16,46 @@ export class ComprarPage implements OnInit {
   private cardArray: MediaItemComponent[];
   private selectMode: boolean;
   private selectedCounter: number;
+  public fotos: any[] = [];
+  public videos: any[] = [];
 
   constructor(private selectModeService: SelectModeService, public ctrl: NavController, public modalController: ModalController, public toastController: ToastController) {
     this.selectMode = false;
     this.selectedCounter = 0;
   }
 
-  ngOnInit() {
+  async ngOnInit() {
+    let response = await fetch('./assets/data/revelarFotos.json');
+    this.fotos = await response.json();
+    let response2 = await fetch('./assets/data/revelarVideos.json');
+    this.videos = await response2.json();
+    this.videos.forEach(iten => {
+      iten.fotos = JSON.stringify(iten.fotos);
+    });
   }
 
   ngAfterViewInit(): void {
-    this.cardArray = this.mediaItems.toArray();
+    this.mediaItems.changes.subscribe(() => {
+      this.cardArray = this.mediaItems.toArray();
 
-    this.cardArray.forEach(item => {
-      item.getStatus().subscribe(selectMode => {
-        this.selectModeService.enableSelectMode(this.cardArray);
-        if (selectMode) {
-          this.selectMode = true;
+      this.cardArray.forEach(item => {
+        item.getStatus().subscribe(selectMode => {
+          this.selectModeService.enableSelectMode(this.cardArray);
+          if (selectMode) {
+            this.selectMode = true;
 
+          }
         }
+        );
+        item.getCounterStatus().subscribe(counterStatus => {
+          if (counterStatus)
+            this.selectedCounter++;
+          else
+            this.selectedCounter--;
+        });
       }
       );
-      item.getCounterStatus().subscribe(counterStatus => {
-        if (counterStatus)
-          this.selectedCounter++;
-        else
-          this.selectedCounter--;
-      });
-    }
-    );
+    });
   }
 
   public remove(): void {

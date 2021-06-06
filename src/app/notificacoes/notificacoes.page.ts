@@ -105,7 +105,7 @@ export class NotificacoesPage {
             ],
             "src": "../../assets/img/albuns/t02.png",
             "srcv": "../../assets/img/albuns/v02.mp4",
-            "video": "true",
+            "video": "true"
           }
         ]),
         titulo: "Bons momentos",
